@@ -1,0 +1,21 @@
+# Environments and caches
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+uv.lock.orig
+
+# Large generated data (reproducible via the pipeline)
+data/pdfs/
+data/corpus/
+data/cache/
+
+# Model and tool caches
+.ollama/
+*.log
+
+# OS noise
+.DS_Store
+
+# Report build artifacts (the final PDF is committed explicitly)
+report/*.tex
