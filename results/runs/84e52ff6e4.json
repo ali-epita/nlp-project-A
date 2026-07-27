@@ -1,0 +1,5308 @@
+{
+  "label": "struct:page",
+  "config": {
+    "label": "struct:page",
+    "strategy": "dense",
+    "chunker": "page",
+    "chunk_size": 512,
+    "chunk_overlap": 64,
+    "embedding_model": "BAAI/bge-base-en-v1.5",
+    "k": 5,
+    "alpha": 0.5,
+    "rerank_pool": 50,
+    "reranker_model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "metadata_filter": false
+  },
+  "run_id": "84e52ff6e4",
+  "n_chunks": 23133,
+  "ms_per_query": 6.2,
+  "summary": {
+    "recall": 0.36666666666666664,
+    "strict_recall": 0.32,
+    "doc_accuracy": 0.8333333333333334,
+    "mrr": 0.21955555555555553,
+    "ndcg": 0.24142529039490668,
+    "evidence_coverage": 0.29170317230280296,
+    "by_question_type": {
+      "domain-relevant": {
+        "n": 50,
+        "recall": 0.22,
+        "strict_recall": 0.2,
+        "doc_accuracy": 0.82,
+        "mrr": 0.12733333333333333,
+        "ndcg": 0.13922444728480035,
+        "evidence_coverage": 0.21217355166450813
+      },
+      "metrics-generated": {
+        "n": 50,
+        "recall": 0.54,
+        "strict_recall": 0.42,
+        "doc_accuracy": 0.88,
+        "mrr": 0.303,
+        "ndcg": 0.2981255340064671,
+        "evidence_coverage": 0.3327943853774988
+      },
+      "novel-generated": {
+        "n": 50,
+        "recall": 0.34,
+        "strict_recall": 0.34,
+        "doc_accuracy": 0.8,
+        "mrr": 0.22833333333333336,
+        "ndcg": 0.2869258898934527,
+        "evidence_coverage": 0.3301415798664021
+      }
+    }
+  },
+  "per_question": [
+    {
+      "financebench_id": "financebench_id_03029",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Information extraction",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.15819209039548024
+      },
+      "retrieved": [
+        [
+          3287,
+          0.7126
+        ],
+        [
+          92,
+          0.7063
+        ],
+        [
+          6631,
+          0.6975
+        ],
+        [
+          3108,
+          0.6958
+        ],
+        [
+          98,
+          0.6942
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_04672",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Information extraction",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.014925373134328358
+      },
+      "retrieved": [
+        [
+          18204,
+          0.708
+        ],
+        [
+          28,
+          0.7056
+        ],
+        [
+          425,
+          0.7055
+        ],
+        [
+          92,
+          0.704
+        ],
+        [
+          12624,
+          0.6967
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00499",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning)",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0021645021645021645
+      },
+      "retrieved": [
+        [
+          89,
+          0.6892
+        ],
+        [
+          1008,
+          0.6883
+        ],
+        [
+          412,
+          0.6881
+        ],
+        [
+          92,
+          0.6809
+        ],
+        [
+          98,
+          0.6797
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01226",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning) OR Numerical reasoning OR Logical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          8947,
+          0.7125
+        ],
+        [
+          18985,
+          0.712
+        ],
+        [
+          15117,
+          0.7012
+        ],
+        [
+          8565,
+          0.6999
+        ],
+        [
+          2586,
+          0.6987
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01865",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          67,
+          0.6758
+        ],
+        [
+          974,
+          0.6719
+        ],
+        [
+          29,
+          0.6626
+        ],
+        [
+          379,
+          0.659
+        ],
+        [
+          394,
+          0.6585
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00807",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning) OR Logical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          1008,
+          0.7464
+        ],
+        [
+          412,
+          0.7457
+        ],
+        [
+          89,
+          0.7191
+        ],
+        [
+          415,
+          0.6854
+        ],
+        [
+          389,
+          0.6829
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00941",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Information extraction",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          415,
+          0.6809
+        ],
+        [
+          419,
+          0.6655
+        ],
+        [
+          522,
+          0.6618
+        ],
+        [
+          92,
+          0.6613
+        ],
+        [
+          515,
+          0.6567
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01858",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 1.0
+      },
+      "retrieved": [
+        [
+          89,
+          0.7058
+        ],
+        [
+          102,
+          0.6917
+        ],
+        [
+          412,
+          0.6834
+        ],
+        [
+          1008,
+          0.6801
+        ],
+        [
+          389,
+          0.6737
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_02987",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.5,
+        "ndcg": 0.38685280723454163,
+        "evidence_coverage": 0.5070142122028914
+      },
+      "retrieved": [
+        [
+          1115,
+          0.7698
+        ],
+        [
+          1185,
+          0.7519
+        ],
+        [
+          1239,
+          0.7491
+        ],
+        [
+          1243,
+          0.7444
+        ],
+        [
+          1190,
+          0.7422
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_07966",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.3333333333333333,
+        "ndcg": 0.3065735963827292,
+        "evidence_coverage": 0.4181431201104464
+      },
+      "retrieved": [
+        [
+          1246,
+          0.7289
+        ],
+        [
+          1243,
+          0.7286
+        ],
+        [
+          1190,
+          0.724
+        ],
+        [
+          1240,
+          0.7232
+        ],
+        [
+          1247,
+          0.7179
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_04735",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.5,
+        "ndcg": 0.38685280723454163,
+        "evidence_coverage": 0.12251183184855234
+      },
+      "retrieved": [
+        [
+          2100,
+          0.7339
+        ],
+        [
+          1587,
+          0.7333
+        ],
+        [
+          1881,
+          0.7282
+        ],
+        [
+          11855,
+          0.7183
+        ],
+        [
+          2309,
+          0.7143
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_07507",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.13777777777777778
+      },
+      "retrieved": [
+        [
+          2171,
+          0.7356
+        ],
+        [
+          2095,
+          0.731
+        ],
+        [
+          2169,
+          0.7297
+        ],
+        [
+          1953,
+          0.7282
+        ],
+        [
+          2097,
+          0.7265
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_03856",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 1.0,
+        "ndcg": 0.6131471927654584,
+        "evidence_coverage": 0.2670111616370401
+      },
+      "retrieved": [
+        [
+          2100,
+          0.7449
+        ],
+        [
+          1587,
+          0.7418
+        ],
+        [
+          1881,
+          0.738
+        ],
+        [
+          11855,
+          0.7316
+        ],
+        [
+          2309,
+          0.7255
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00438",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning OR information extraction",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          7577,
+          0.6805
+        ],
+        [
+          2171,
+          0.6786
+        ],
+        [
+          2201,
+          0.6695
+        ],
+        [
+          1678,
+          0.6676
+        ],
+        [
+          1978,
+          0.6637
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00591",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575,
+        "evidence_coverage": 0.9627906976744186
+      },
+      "retrieved": [
+        [
+          1999,
+          0.6906
+        ],
+        [
+          2309,
+          0.6874
+        ],
+        [
+          1614,
+          0.682
+        ],
+        [
+          1508,
+          0.6775
+        ],
+        [
+          2100,
+          0.6742
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01319",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Information extraction",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575,
+        "evidence_coverage": 0.9454545454545454
+      },
+      "retrieved": [
+        [
+          2821,
+          0.7382
+        ],
+        [
+          2660,
+          0.7352
+        ],
+        [
+          2772,
+          0.7276
+        ],
+        [
+          2562,
+          0.7175
+        ],
+        [
+          2822,
+          0.714
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00540",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning OR Logical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.08653846153846154
+      },
+      "retrieved": [
+        [
+          2821,
+          0.7059
+        ],
+        [
+          2814,
+          0.6927
+        ],
+        [
+          2562,
+          0.691
+        ],
+        [
+          2663,
+          0.6836
+        ],
+        [
+          2822,
+          0.6795
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_10420",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0698051948051948
+      },
+      "retrieved": [
+        [
+          22015,
+          0.8114
+        ],
+        [
+          22852,
+          0.7775
+        ],
+        [
+          22575,
+          0.7527
+        ],
+        [
+          2562,
+          0.7419
+        ],
+        [
+          22014,
+          0.7403
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_06655",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.5,
+        "ndcg": 0.38685280723454163,
+        "evidence_coverage": 0.41321321321321325
+      },
+      "retrieved": [
+        [
+          3139,
+          0.7085
+        ],
+        [
+          2973,
+          0.6966
+        ],
+        [
+          3140,
+          0.6961
+        ],
+        [
+          18853,
+          0.6837
+        ],
+        [
+          17967,
+          0.679
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_08135",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.20540540540540542
+      },
+      "retrieved": [
+        [
+          3138,
+          0.6934
+        ],
+        [
+          2972,
+          0.6917
+        ],
+        [
+          17864,
+          0.6859
+        ],
+        [
+          3140,
+          0.6843
+        ],
+        [
+          3137,
+          0.6841
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_08286",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Information extraction",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575,
+        "evidence_coverage": 1.0
+      },
+      "retrieved": [
+        [
+          3140,
+          0.7303
+        ],
+        [
+          3137,
+          0.7297
+        ],
+        [
+          3138,
+          0.7272
+        ],
+        [
+          2972,
+          0.7263
+        ],
+        [
+          2974,
+          0.7234
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_03882",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Information extraction",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.022556390977443608
+      },
+      "retrieved": [
+        [
+          3781,
+          0.7177
+        ],
+        [
+          3310,
+          0.7094
+        ],
+        [
+          3784,
+          0.7035
+        ],
+        [
+          3749,
+          0.7001
+        ],
+        [
+          3632,
+          0.6985
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01935",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.01824817518248175
+      },
+      "retrieved": [
+        [
+          3430,
+          0.6649
+        ],
+        [
+          3302,
+          0.6589
+        ],
+        [
+          3776,
+          0.6576
+        ],
+        [
+          3429,
+          0.6523
+        ],
+        [
+          3877,
+          0.6514
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00799",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning OR Logical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          3676,
+          0.6773
+        ],
+        [
+          3710,
+          0.6701
+        ],
+        [
+          3673,
+          0.6698
+        ],
+        [
+          3664,
+          0.6694
+        ],
+        [
+          3743,
+          0.6631
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01079",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Information extraction",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0037593984962406013
+      },
+      "retrieved": [
+        [
+          3868,
+          0.6885
+        ],
+        [
+          3417,
+          0.6577
+        ],
+        [
+          3430,
+          0.6496
+        ],
+        [
+          3272,
+          0.6381
+        ],
+        [
+          3877,
+          0.6368
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01148",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Information extraction OR Logical reasoning OR",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.3333333333333333,
+        "ndcg": 0.5,
+        "evidence_coverage": 0.9473684210526315
+      },
+      "retrieved": [
+        [
+          3788,
+          0.726
+        ],
+        [
+          3674,
+          0.7033
+        ],
+        [
+          3697,
+          0.6849
+        ],
+        [
+          3706,
+          0.6716
+        ],
+        [
+          3318,
+          0.6622
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00684",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning OR information extraction",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.15384615384615385
+      },
+      "retrieved": [
+        [
+          3664,
+          0.6826
+        ],
+        [
+          3632,
+          0.6625
+        ],
+        [
+          3416,
+          0.662
+        ],
+        [
+          3637,
+          0.6516
+        ],
+        [
+          3749,
+          0.6441
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01936",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          3676,
+          0.6688
+        ],
+        [
+          3284,
+          0.6587
+        ],
+        [
+          3868,
+          0.6577
+        ],
+        [
+          3587,
+          0.6473
+        ],
+        [
+          3299,
+          0.6455
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01928",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.027932960893854747
+      },
+      "retrieved": [
+        [
+          3754,
+          0.7792
+        ],
+        [
+          3278,
+          0.7783
+        ],
+        [
+          3642,
+          0.7648
+        ],
+        [
+          3676,
+          0.7347
+        ],
+        [
+          3672,
+          0.7316
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01930",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          3668,
+          0.731
+        ],
+        [
+          2947,
+          0.685
+        ],
+        [
+          12504,
+          0.6789
+        ],
+        [
+          18510,
+          0.6782
+        ],
+        [
+          12257,
+          0.6769
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_03069",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.046673149048478954
+      },
+      "retrieved": [
+        [
+          4519,
+          0.7043
+        ],
+        [
+          4105,
+          0.7003
+        ],
+        [
+          4053,
+          0.7002
+        ],
+        [
+          4048,
+          0.695
+        ],
+        [
+          3972,
+          0.6946
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00222",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning) OR Logical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.01762114537444934
+      },
+      "retrieved": [
+        [
+          4488,
+          0.6375
+        ],
+        [
+          4401,
+          0.6339
+        ],
+        [
+          4506,
+          0.6269
+        ],
+        [
+          4519,
+          0.6269
+        ],
+        [
+          3971,
+          0.6228
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00995",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Information extraction",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.20238095238095238
+      },
+      "retrieved": [
+        [
+          4519,
+          0.643
+        ],
+        [
+          3972,
+          0.6385
+        ],
+        [
+          4105,
+          0.6338
+        ],
+        [
+          4404,
+          0.6288
+        ],
+        [
+          3986,
+          0.6272
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01198",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Information extraction",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          4053,
+          0.6809
+        ],
+        [
+          3972,
+          0.6645
+        ],
+        [
+          4401,
+          0.6611
+        ],
+        [
+          4519,
+          0.6466
+        ],
+        [
+          7075,
+          0.6463
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00917",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning) OR Numerical reasoning OR Logical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          2586,
+          0.7087
+        ],
+        [
+          8947,
+          0.6937
+        ],
+        [
+          61,
+          0.6866
+        ],
+        [
+          4053,
+          0.6865
+        ],
+        [
+          18985,
+          0.6813
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01279",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575,
+        "evidence_coverage": 0.7724550898203593
+      },
+      "retrieved": [
+        [
+          4104,
+          0.6824
+        ],
+        [
+          4516,
+          0.6696
+        ],
+        [
+          6631,
+          0.6691
+        ],
+        [
+          1013,
+          0.663
+        ],
+        [
+          12278,
+          0.6627
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00563",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          4053,
+          0.654
+        ],
+        [
+          9491,
+          0.6423
+        ],
+        [
+          51,
+          0.6404
+        ],
+        [
+          9499,
+          0.6369
+        ],
+        [
+          4105,
+          0.6353
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00757",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          4519,
+          0.6585
+        ],
+        [
+          4105,
+          0.65
+        ],
+        [
+          3972,
+          0.6406
+        ],
+        [
+          4401,
+          0.6385
+        ],
+        [
+          4053,
+          0.6306
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00476",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Information extraction",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575,
+        "evidence_coverage": 0.9787234042553191
+      },
+      "retrieved": [
+        [
+          4819,
+          0.6908
+        ],
+        [
+          4627,
+          0.6738
+        ],
+        [
+          4860,
+          0.6737
+        ],
+        [
+          4763,
+          0.6729
+        ],
+        [
+          4851,
+          0.6727
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01028",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Information extraction",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          4634,
+          0.6713
+        ],
+        [
+          5079,
+          0.6373
+        ],
+        [
+          4631,
+          0.6338
+        ],
+        [
+          4713,
+          0.6267
+        ],
+        [
+          4633,
+          0.6184
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00723",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning OR information extraction",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          61,
+          0.6709
+        ],
+        [
+          2586,
+          0.6668
+        ],
+        [
+          8169,
+          0.6652
+        ],
+        [
+          7577,
+          0.6604
+        ],
+        [
+          2602,
+          0.6591
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00720",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning) OR Numerical reasoning OR Logical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          9988,
+          0.6883
+        ],
+        [
+          9493,
+          0.6878
+        ],
+        [
+          8161,
+          0.6741
+        ],
+        [
+          4860,
+          0.662
+        ],
+        [
+          18094,
+          0.6577
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01351",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          18166,
+          0.7322
+        ],
+        [
+          22937,
+          0.7165
+        ],
+        [
+          4729,
+          0.7158
+        ],
+        [
+          22580,
+          0.7024
+        ],
+        [
+          22659,
+          0.7015
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01964",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.006644518272425249
+      },
+      "retrieved": [
+        [
+          4860,
+          0.6989
+        ],
+        [
+          4819,
+          0.6649
+        ],
+        [
+          4858,
+          0.6539
+        ],
+        [
+          4926,
+          0.6412
+        ],
+        [
+          4756,
+          0.6408
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01981",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          4634,
+          0.6735
+        ],
+        [
+          4761,
+          0.6589
+        ],
+        [
+          4633,
+          0.6547
+        ],
+        [
+          4793,
+          0.6544
+        ],
+        [
+          4851,
+          0.6506
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_05718",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Information extraction",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.3333333333333333,
+        "ndcg": 0.5,
+        "evidence_coverage": 0.6836027713625866
+      },
+      "retrieved": [
+        [
+          5969,
+          0.7356
+        ],
+        [
+          5611,
+          0.7339
+        ],
+        [
+          5280,
+          0.7325
+        ],
+        [
+          5968,
+          0.7064
+        ],
+        [
+          5610,
+          0.7015
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_04254",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.5,
+        "ndcg": 0.6240505200038379,
+        "evidence_coverage": 0.8143436578171092
+      },
+      "retrieved": [
+        [
+          5969,
+          0.7265
+        ],
+        [
+          5611,
+          0.7232
+        ],
+        [
+          5280,
+          0.7192
+        ],
+        [
+          5967,
+          0.6988
+        ],
+        [
+          5609,
+          0.6984
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00070",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning OR Logical reasoning",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.3333333333333333,
+        "ndcg": 0.3065735963827292,
+        "evidence_coverage": 0.5997349488829988
+      },
+      "retrieved": [
+        [
+          5428,
+          0.6751
+        ],
+        [
+          5969,
+          0.6711
+        ],
+        [
+          5966,
+          0.6701
+        ],
+        [
+          5608,
+          0.666
+        ],
+        [
+          5249,
+          0.6654
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_02608",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.04861111111111111
+      },
+      "retrieved": [
+        [
+          6600,
+          0.7234
+        ],
+        [
+          6410,
+          0.7066
+        ],
+        [
+          11994,
+          0.7011
+        ],
+        [
+          6407,
+          0.6971
+        ],
+        [
+          11746,
+          0.692
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_04417",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Information extraction",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "evidence_coverage": 0.3819444444444444
+      },
+      "retrieved": [
+        [
+          6652,
+          0.7013
+        ],
+        [
+          9278,
+          0.7004
+        ],
+        [
+          6466,
+          0.6991
+        ],
+        [
+          6832,
+          0.6959
+        ],
+        [
+          6600,
+          0.6941
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00685",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning) OR Logical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          6410,
+          0.6845
+        ],
+        [
+          6600,
+          0.6773
+        ],
+        [
+          6424,
+          0.6737
+        ],
+        [
+          9988,
+          0.6635
+        ],
+        [
+          6406,
+          0.6605
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01077",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Information extraction",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          6902,
+          0.6416
+        ],
+        [
+          6593,
+          0.6382
+        ],
+        [
+          6951,
+          0.6364
+        ],
+        [
+          6891,
+          0.6346
+        ],
+        [
+          6599,
+          0.6339
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01275",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.04198473282442748
+      },
+      "retrieved": [
+        [
+          6600,
+          0.6457
+        ],
+        [
+          6797,
+          0.6447
+        ],
+        [
+          6409,
+          0.6441
+        ],
+        [
+          6441,
+          0.6363
+        ],
+        [
+          6631,
+          0.636
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00288",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575,
+        "evidence_coverage": 0.18307426597582038
+      },
+      "retrieved": [
+        [
+          6938,
+          0.7207
+        ],
+        [
+          6937,
+          0.7031
+        ],
+        [
+          12316,
+          0.7027
+        ],
+        [
+          8992,
+          0.6934
+        ],
+        [
+          1150,
+          0.6883
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00460",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575,
+        "evidence_coverage": 0.7439024390243902
+      },
+      "retrieved": [
+        [
+          6933,
+          0.6635
+        ],
+        [
+          6930,
+          0.663
+        ],
+        [
+          6902,
+          0.6613
+        ],
+        [
+          6886,
+          0.6474
+        ],
+        [
+          6804,
+          0.6416
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01902",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.225
+      },
+      "retrieved": [
+        [
+          6753,
+          0.6515
+        ],
+        [
+          6393,
+          0.6436
+        ],
+        [
+          6804,
+          0.6353
+        ],
+        [
+          6585,
+          0.6324
+        ],
+        [
+          6617,
+          0.629
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_04660",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          93,
+          0.7106
+        ],
+        [
+          1012,
+          0.7092
+        ],
+        [
+          6447,
+          0.6958
+        ],
+        [
+          9278,
+          0.6908
+        ],
+        [
+          416,
+          0.6803
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_03838",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "evidence_coverage": 0.13513513513513514
+      },
+      "retrieved": [
+        [
+          7365,
+          0.705
+        ],
+        [
+          7367,
+          0.6801
+        ],
+        [
+          7318,
+          0.6698
+        ],
+        [
+          21375,
+          0.6694
+        ],
+        [
+          7210,
+          0.6653
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_07661",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Information extraction",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575,
+        "evidence_coverage": 0.115
+      },
+      "retrieved": [
+        [
+          7098,
+          0.7126
+        ],
+        [
+          7372,
+          0.7098
+        ],
+        [
+          12278,
+          0.6938
+        ],
+        [
+          2957,
+          0.6883
+        ],
+        [
+          7620,
+          0.6824
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_10285",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Information extraction",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575,
+        "evidence_coverage": 0.9043478260869565
+      },
+      "retrieved": [
+        [
+          7584,
+          0.7479
+        ],
+        [
+          7583,
+          0.7436
+        ],
+        [
+          7820,
+          0.7429
+        ],
+        [
+          7823,
+          0.7426
+        ],
+        [
+          7818,
+          0.7268
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00517",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning)",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "evidence_coverage": 1.0
+      },
+      "retrieved": [
+        [
+          7827,
+          0.6681
+        ],
+        [
+          7541,
+          0.6647
+        ],
+        [
+          7589,
+          0.6611
+        ],
+        [
+          7759,
+          0.6529
+        ],
+        [
+          7817,
+          0.6502
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01091",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Information extraction",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575,
+        "evidence_coverage": 1.0
+      },
+      "retrieved": [
+        [
+          7828,
+          0.663
+        ],
+        [
+          7914,
+          0.6611
+        ],
+        [
+          7641,
+          0.6518
+        ],
+        [
+          7648,
+          0.6517
+        ],
+        [
+          7590,
+          0.6389
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00678",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning OR information extraction",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.15384615384615385
+      },
+      "retrieved": [
+        [
+          7541,
+          0.6887
+        ],
+        [
+          7771,
+          0.6663
+        ],
+        [
+          7759,
+          0.6505
+        ],
+        [
+          7811,
+          0.6437
+        ],
+        [
+          9493,
+          0.6413
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01290",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Information extraction OR Logical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          7496,
+          0.6579
+        ],
+        [
+          7791,
+          0.6405
+        ],
+        [
+          7721,
+          0.6391
+        ],
+        [
+          7639,
+          0.6387
+        ],
+        [
+          7828,
+          0.6369
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00464",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          7721,
+          0.6957
+        ],
+        [
+          7496,
+          0.693
+        ],
+        [
+          7828,
+          0.6694
+        ],
+        [
+          7498,
+          0.6603
+        ],
+        [
+          7506,
+          0.6492
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00494",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.3333333333333333,
+        "ndcg": 0.5,
+        "evidence_coverage": 1.0
+      },
+      "retrieved": [
+        [
+          7781,
+          0.6586
+        ],
+        [
+          7782,
+          0.6499
+        ],
+        [
+          7733,
+          0.6484
+        ],
+        [
+          7863,
+          0.6386
+        ],
+        [
+          15673,
+          0.6374
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00585",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          18166,
+          0.7159
+        ],
+        [
+          4729,
+          0.7103
+        ],
+        [
+          22937,
+          0.7075
+        ],
+        [
+          21345,
+          0.7025
+        ],
+        [
+          18383,
+          0.7018
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_03473",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.143943754087639
+      },
+      "retrieved": [
+        [
+          22015,
+          0.7868
+        ],
+        [
+          8155,
+          0.7543
+        ],
+        [
+          8376,
+          0.7529
+        ],
+        [
+          22852,
+          0.7505
+        ],
+        [
+          22014,
+          0.7317
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_09724",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0962566844919786
+      },
+      "retrieved": [
+        [
+          8155,
+          0.678
+        ],
+        [
+          8376,
+          0.6579
+        ],
+        [
+          8108,
+          0.6467
+        ],
+        [
+          8042,
+          0.6441
+        ],
+        [
+          8418,
+          0.6435
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_06272",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.07060199116185499
+      },
+      "retrieved": [
+        [
+          8219,
+          0.7242
+        ],
+        [
+          8418,
+          0.711
+        ],
+        [
+          8605,
+          0.7098
+        ],
+        [
+          8376,
+          0.7044
+        ],
+        [
+          8155,
+          0.6956
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_10130",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.5,
+        "ndcg": 0.38685280723454163,
+        "evidence_coverage": 0.05882104908078934
+      },
+      "retrieved": [
+        [
+          9935,
+          0.7319
+        ],
+        [
+          9327,
+          0.7158
+        ],
+        [
+          9569,
+          0.7126
+        ],
+        [
+          9379,
+          0.7105
+        ],
+        [
+          9783,
+          0.7076
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_02981",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.07627118644067797
+      },
+      "retrieved": [
+        [
+          9490,
+          0.7365
+        ],
+        [
+          9248,
+          0.7319
+        ],
+        [
+          9718,
+          0.7311
+        ],
+        [
+          9326,
+          0.7159
+        ],
+        [
+          9325,
+          0.7156
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01346",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.041666666666666664
+      },
+      "retrieved": [
+        [
+          9495,
+          0.7544
+        ],
+        [
+          9935,
+          0.7506
+        ],
+        [
+          9256,
+          0.7484
+        ],
+        [
+          9721,
+          0.74
+        ],
+        [
+          9815,
+          0.7392
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00005",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning OR Logical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          9487,
+          0.6876
+        ],
+        [
+          9279,
+          0.6821
+        ],
+        [
+          9259,
+          0.6765
+        ],
+        [
+          9245,
+          0.671
+        ],
+        [
+          9824,
+          0.6654
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_04209",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Information extraction",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "evidence_coverage": 0.9608695652173913
+      },
+      "retrieved": [
+        [
+          10006,
+          0.7262
+        ],
+        [
+          6652,
+          0.7025
+        ],
+        [
+          10005,
+          0.692
+        ],
+        [
+          6464,
+          0.6902
+        ],
+        [
+          3866,
+          0.6881
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_05915",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.05584559405157412
+      },
+      "retrieved": [
+        [
+          14890,
+          0.7332
+        ],
+        [
+          10845,
+          0.7256
+        ],
+        [
+          11243,
+          0.7242
+        ],
+        [
+          10846,
+          0.7186
+        ],
+        [
+          11051,
+          0.718
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00790",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning)",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0035460992907801418
+      },
+      "retrieved": [
+        [
+          11141,
+          0.6952
+        ],
+        [
+          10706,
+          0.6907
+        ],
+        [
+          10882,
+          0.6883
+        ],
+        [
+          10074,
+          0.6856
+        ],
+        [
+          10613,
+          0.6797
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01107",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Information extraction",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 1.0,
+        "ndcg": 0.6131471927654584,
+        "evidence_coverage": 0.050724637681159424
+      },
+      "retrieved": [
+        [
+          11261,
+          0.684
+        ],
+        [
+          11271,
+          0.6751
+        ],
+        [
+          10824,
+          0.6692
+        ],
+        [
+          12432,
+          0.6658
+        ],
+        [
+          11264,
+          0.6507
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01244",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Information extraction",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "evidence_coverage": 1.0
+      },
+      "retrieved": [
+        [
+          11048,
+          0.7653
+        ],
+        [
+          10237,
+          0.7519
+        ],
+        [
+          11098,
+          0.7442
+        ],
+        [
+          11246,
+          0.7198
+        ],
+        [
+          11051,
+          0.7171
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00839",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.2857142857142857
+      },
+      "retrieved": [
+        [
+          11398,
+          0.7032
+        ],
+        [
+          11397,
+          0.6998
+        ],
+        [
+          11400,
+          0.6811
+        ],
+        [
+          11354,
+          0.6483
+        ],
+        [
+          11346,
+          0.6469
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00822",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.25,
+        "ndcg": 0.43067655807339306,
+        "evidence_coverage": 0.38345864661654133
+      },
+      "retrieved": [
+        [
+          15564,
+          0.549
+        ],
+        [
+          15562,
+          0.5487
+        ],
+        [
+          16528,
+          0.5439
+        ],
+        [
+          11344,
+          0.5424
+        ],
+        [
+          15557,
+          0.5415
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_04103",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.3333333333333333,
+        "ndcg": 0.3065735963827292,
+        "evidence_coverage": 0.5223266028182761
+      },
+      "retrieved": [
+        [
+          11610,
+          0.6761
+        ],
+        [
+          18191,
+          0.6749
+        ],
+        [
+          11500,
+          0.6746
+        ],
+        [
+          11504,
+          0.6743
+        ],
+        [
+          11767,
+          0.6734
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_03471",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.02617801047120419
+      },
+      "retrieved": [
+        [
+          1012,
+          0.726
+        ],
+        [
+          93,
+          0.7181
+        ],
+        [
+          11488,
+          0.7134
+        ],
+        [
+          416,
+          0.7038
+        ],
+        [
+          12011,
+          0.7017
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_04854",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.3333333333333333,
+        "ndcg": 0.5,
+        "evidence_coverage": 0.5721518987341773
+      },
+      "retrieved": [
+        [
+          17710,
+          0.7332
+        ],
+        [
+          19707,
+          0.7277
+        ],
+        [
+          11767,
+          0.7262
+        ],
+        [
+          11504,
+          0.7175
+        ],
+        [
+          22576,
+          0.7167
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_10136",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.25,
+        "ndcg": 0.2640681225725909,
+        "evidence_coverage": 0.38749114103472715
+      },
+      "retrieved": [
+        [
+          11487,
+          0.7343
+        ],
+        [
+          11504,
+          0.7334
+        ],
+        [
+          11767,
+          0.7325
+        ],
+        [
+          12013,
+          0.7311
+        ],
+        [
+          11500,
+          0.7184
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00956",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning)",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          12153,
+          0.6495
+        ],
+        [
+          12503,
+          0.6448
+        ],
+        [
+          12548,
+          0.6309
+        ],
+        [
+          22674,
+          0.6291
+        ],
+        [
+          12552,
+          0.628
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00669",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning) OR Numerical reasoning OR Logical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          9493,
+          0.6673
+        ],
+        [
+          9988,
+          0.6587
+        ],
+        [
+          8161,
+          0.653
+        ],
+        [
+          40,
+          0.645
+        ],
+        [
+          276,
+          0.6427
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00711",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning OR Logical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.07553143374038897
+      },
+      "retrieved": [
+        [
+          11113,
+          0.6733
+        ],
+        [
+          4062,
+          0.6583
+        ],
+        [
+          19107,
+          0.6564
+        ],
+        [
+          10673,
+          0.6521
+        ],
+        [
+          12300,
+          0.646
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00651",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.5,
+        "ndcg": 1.0616063116448506,
+        "evidence_coverage": 0.8558558558558559
+      },
+      "retrieved": [
+        [
+          12503,
+          0.6594
+        ],
+        [
+          12152,
+          0.6561
+        ],
+        [
+          11489,
+          0.6405
+        ],
+        [
+          12153,
+          0.6371
+        ],
+        [
+          11991,
+          0.6339
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01484",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          12257,
+          0.6546
+        ],
+        [
+          12152,
+          0.646
+        ],
+        [
+          2947,
+          0.6355
+        ],
+        [
+          20781,
+          0.635
+        ],
+        [
+          12569,
+          0.6345
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01488",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0028653295128939827
+      },
+      "retrieved": [
+        [
+          20836,
+          0.6048
+        ],
+        [
+          2675,
+          0.5917
+        ],
+        [
+          20864,
+          0.5897
+        ],
+        [
+          20759,
+          0.5895
+        ],
+        [
+          12164,
+          0.5785
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01490",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575,
+        "evidence_coverage": 0.8424068767908309
+      },
+      "retrieved": [
+        [
+          12164,
+          0.6788
+        ],
+        [
+          12548,
+          0.676
+        ],
+        [
+          12192,
+          0.6699
+        ],
+        [
+          12540,
+          0.666
+        ],
+        [
+          12274,
+          0.664
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01491",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "evidence_coverage": 0.8424068767908309
+      },
+      "retrieved": [
+        [
+          12548,
+          0.7028
+        ],
+        [
+          12546,
+          0.6833
+        ],
+        [
+          12551,
+          0.6388
+        ],
+        [
+          12481,
+          0.6377
+        ],
+        [
+          20866,
+          0.6222
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01487",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "evidence_coverage": 1.0
+      },
+      "retrieved": [
+        [
+          12517,
+          0.6643
+        ],
+        [
+          12503,
+          0.6637
+        ],
+        [
+          12168,
+          0.6602
+        ],
+        [
+          12169,
+          0.6514
+        ],
+        [
+          12564,
+          0.6365
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00299",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.037914691943127965
+      },
+      "retrieved": [
+        [
+          14249,
+          0.6213
+        ],
+        [
+          14641,
+          0.616
+        ],
+        [
+          12913,
+          0.6137
+        ],
+        [
+          13319,
+          0.6109
+        ],
+        [
+          13509,
+          0.6061
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_02119",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          13951,
+          0.6543
+        ],
+        [
+          13970,
+          0.6388
+        ],
+        [
+          13318,
+          0.6382
+        ],
+        [
+          14000,
+          0.6371
+        ],
+        [
+          13723,
+          0.6369
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00206",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning) OR Logical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          8161,
+          0.6816
+        ],
+        [
+          9988,
+          0.6678
+        ],
+        [
+          9493,
+          0.6665
+        ],
+        [
+          8947,
+          0.6651
+        ],
+        [
+          13735,
+          0.6626
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00394",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          12967,
+          0.662
+        ],
+        [
+          14249,
+          0.6392
+        ],
+        [
+          13480,
+          0.6371
+        ],
+        [
+          12639,
+          0.625
+        ],
+        [
+          13479,
+          0.6221
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_02049",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          14408,
+          0.7321
+        ],
+        [
+          11998,
+          0.727
+        ],
+        [
+          13657,
+          0.7203
+        ],
+        [
+          14407,
+          0.7114
+        ],
+        [
+          12717,
+          0.7109
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_10499",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 1.0,
+        "ndcg": 0.6131471927654584,
+        "evidence_coverage": 0.5144629563984403
+      },
+      "retrieved": [
+        [
+          14811,
+          0.719
+        ],
+        [
+          14752,
+          0.7186
+        ],
+        [
+          14813,
+          0.7131
+        ],
+        [
+          14751,
+          0.7087
+        ],
+        [
+          14940,
+          0.7038
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_04412",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 1.0,
+        "ndcg": 0.6131471927654584,
+        "evidence_coverage": 0.49220449601160265
+      },
+      "retrieved": [
+        [
+          15174,
+          0.7291
+        ],
+        [
+          15742,
+          0.7276
+        ],
+        [
+          15456,
+          0.7254
+        ],
+        [
+          13025,
+          0.7181
+        ],
+        [
+          22853,
+          0.7115
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_03031",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          93,
+          0.7553
+        ],
+        [
+          1012,
+          0.7531
+        ],
+        [
+          416,
+          0.7375
+        ],
+        [
+          9278,
+          0.7281
+        ],
+        [
+          15107,
+          0.7262
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_03718",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.22330097087378642
+      },
+      "retrieved": [
+        [
+          15173,
+          0.728
+        ],
+        [
+          15455,
+          0.722
+        ],
+        [
+          15741,
+          0.7174
+        ],
+        [
+          15175,
+          0.6996
+        ],
+        [
+          15454,
+          0.6995
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_04171",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Information extraction",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.3333333333333333,
+        "ndcg": 0.5,
+        "evidence_coverage": 0.6850828729281768
+      },
+      "retrieved": [
+        [
+          16599,
+          0.7541
+        ],
+        [
+          16228,
+          0.7492
+        ],
+        [
+          15993,
+          0.7492
+        ],
+        [
+          16408,
+          0.7461
+        ],
+        [
+          16405,
+          0.7434
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_03849",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.022167487684729065
+      },
+      "retrieved": [
+        [
+          15938,
+          0.7337
+        ],
+        [
+          16091,
+          0.7284
+        ],
+        [
+          16779,
+          0.718
+        ],
+        [
+          16712,
+          0.7102
+        ],
+        [
+          16702,
+          0.7069
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01254",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Information extraction",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.375
+      },
+      "retrieved": [
+        [
+          16750,
+          0.7483
+        ],
+        [
+          16408,
+          0.7351
+        ],
+        [
+          16001,
+          0.7229
+        ],
+        [
+          16525,
+          0.7193
+        ],
+        [
+          16340,
+          0.7175
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00382",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.015151515151515152
+      },
+      "retrieved": [
+        [
+          16702,
+          0.6666
+        ],
+        [
+          15955,
+          0.6642
+        ],
+        [
+          17067,
+          0.6487
+        ],
+        [
+          15953,
+          0.6473
+        ],
+        [
+          17069,
+          0.6362
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01911",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.10588235294117647
+      },
+      "retrieved": [
+        [
+          16702,
+          0.6523
+        ],
+        [
+          15954,
+          0.6512
+        ],
+        [
+          17105,
+          0.6491
+        ],
+        [
+          16361,
+          0.646
+        ],
+        [
+          16369,
+          0.6373
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01912",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.017543859649122806
+      },
+      "retrieved": [
+        [
+          16359,
+          0.5848
+        ],
+        [
+          15953,
+          0.5813
+        ],
+        [
+          16700,
+          0.5806
+        ],
+        [
+          16360,
+          0.5802
+        ],
+        [
+          16601,
+          0.5752
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00407",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "evidence_coverage": 0.9459459459459459
+      },
+      "retrieved": [
+        [
+          17026,
+          0.6668
+        ],
+        [
+          16246,
+          0.6564
+        ],
+        [
+          17080,
+          0.6546
+        ],
+        [
+          17051,
+          0.6545
+        ],
+        [
+          16718,
+          0.6504
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_04700",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Information extraction",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.005780346820809248
+      },
+      "retrieved": [
+        [
+          17118,
+          0.6804
+        ],
+        [
+          12299,
+          0.6786
+        ],
+        [
+          1187,
+          0.674
+        ],
+        [
+          17428,
+          0.6734
+        ],
+        [
+          17864,
+          0.6725
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00552",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          17204,
+          0.6663
+        ],
+        [
+          90,
+          0.6601
+        ],
+        [
+          12282,
+          0.6484
+        ],
+        [
+          3287,
+          0.6438
+        ],
+        [
+          13061,
+          0.6409
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_04458",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.3333333333333333,
+        "ndcg": 0.3065735963827292,
+        "evidence_coverage": 0.33607323393228833
+      },
+      "retrieved": [
+        [
+          17753,
+          0.7368
+        ],
+        [
+          21725,
+          0.7355
+        ],
+        [
+          17617,
+          0.7334
+        ],
+        [
+          22015,
+          0.7169
+        ],
+        [
+          21457,
+          0.7129
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_03282",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Information extraction",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "evidence_coverage": 0.8446601941747572
+      },
+      "retrieved": [
+        [
+          17755,
+          0.7407
+        ],
+        [
+          17619,
+          0.7206
+        ],
+        [
+          17752,
+          0.7201
+        ],
+        [
+          17753,
+          0.714
+        ],
+        [
+          17616,
+          0.7032
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_04302",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.2,
+        "ndcg": 0.38685280723454163,
+        "evidence_coverage": 1.0
+      },
+      "retrieved": [
+        [
+          17875,
+          0.7594
+        ],
+        [
+          18306,
+          0.7567
+        ],
+        [
+          17867,
+          0.7555
+        ],
+        [
+          18129,
+          0.7551
+        ],
+        [
+          17923,
+          0.7538
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_03531",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Information extraction",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "evidence_coverage": 0.9323671497584541
+      },
+      "retrieved": [
+        [
+          18131,
+          0.8213
+        ],
+        [
+          17925,
+          0.8042
+        ],
+        [
+          18353,
+          0.7956
+        ],
+        [
+          18564,
+          0.7925
+        ],
+        [
+          18565,
+          0.7815
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_04080",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.25,
+        "ndcg": 0.2640681225725909,
+        "evidence_coverage": 0.5352422907488987
+      },
+      "retrieved": [
+        [
+          18075,
+          0.7771
+        ],
+        [
+          18562,
+          0.7457
+        ],
+        [
+          18129,
+          0.7435
+        ],
+        [
+          18351,
+          0.741
+        ],
+        [
+          17923,
+          0.7406
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01163",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575,
+        "evidence_coverage": 0.8206896551724138
+      },
+      "retrieved": [
+        [
+          18354,
+          0.7211
+        ],
+        [
+          18565,
+          0.7174
+        ],
+        [
+          17926,
+          0.712
+        ],
+        [
+          18132,
+          0.7112
+        ],
+        [
+          18542,
+          0.7094
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00080",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning OR Logical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.004132231404958678
+      },
+      "retrieved": [
+        [
+          18755,
+          0.6786
+        ],
+        [
+          18720,
+          0.6765
+        ],
+        [
+          18730,
+          0.6629
+        ],
+        [
+          18803,
+          0.6566
+        ],
+        [
+          18788,
+          0.6486
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_04980",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Information extraction",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.25,
+        "ndcg": 0.43067655807339306,
+        "evidence_coverage": 0.9432624113475178
+      },
+      "retrieved": [
+        [
+          19027,
+          0.7585
+        ],
+        [
+          19726,
+          0.7507
+        ],
+        [
+          20315,
+          0.7485
+        ],
+        [
+          19026,
+          0.7389
+        ],
+        [
+          19724,
+          0.7378
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01009",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Information extraction",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.05434782608695652
+      },
+      "retrieved": [
+        [
+          18963,
+          0.6246
+        ],
+        [
+          19657,
+          0.6245
+        ],
+        [
+          19659,
+          0.6237
+        ],
+        [
+          18964,
+          0.621
+        ],
+        [
+          19026,
+          0.62
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00735",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Information extraction",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.08333333333333333
+      },
+      "retrieved": [
+        [
+          20328,
+          0.6779
+        ],
+        [
+          20337,
+          0.6478
+        ],
+        [
+          11694,
+          0.646
+        ],
+        [
+          20334,
+          0.6451
+        ],
+        [
+          19120,
+          0.6418
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01328",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Information extraction",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.015748031496062992
+      },
+      "retrieved": [
+        [
+          19730,
+          0.7326
+        ],
+        [
+          19722,
+          0.7307
+        ],
+        [
+          19024,
+          0.7298
+        ],
+        [
+          19031,
+          0.7296
+        ],
+        [
+          20323,
+          0.7218
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_03620",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.2,
+        "ndcg": 0.23719771276929622,
+        "evidence_coverage": 0.4916947738729917
+      },
+      "retrieved": [
+        [
+          20314,
+          0.701
+        ],
+        [
+          18970,
+          0.6956
+        ],
+        [
+          11751,
+          0.6933
+        ],
+        [
+          20315,
+          0.6892
+        ],
+        [
+          19724,
+          0.6882
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_04481",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.12757951619337757
+      },
+      "retrieved": [
+        [
+          19729,
+          0.7079
+        ],
+        [
+          20314,
+          0.7061
+        ],
+        [
+          20326,
+          0.7033
+        ],
+        [
+          21725,
+          0.703
+        ],
+        [
+          19030,
+          0.7012
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01482",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575,
+        "evidence_coverage": 1.0
+      },
+      "retrieved": [
+        [
+          20331,
+          0.748
+        ],
+        [
+          20333,
+          0.6959
+        ],
+        [
+          20341,
+          0.6739
+        ],
+        [
+          19145,
+          0.6673
+        ],
+        [
+          20303,
+          0.6652
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00705",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.6309297535714575,
+        "evidence_coverage": 0.9285714285714286
+      },
+      "retrieved": [
+        [
+          20338,
+          0.761
+        ],
+        [
+          20337,
+          0.7562
+        ],
+        [
+          20488,
+          0.7454
+        ],
+        [
+          20342,
+          0.7169
+        ],
+        [
+          19085,
+          0.7123
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00882",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.6309297535714575,
+        "evidence_coverage": 0.9118329466357309
+      },
+      "retrieved": [
+        [
+          20337,
+          0.8063
+        ],
+        [
+          20338,
+          0.8052
+        ],
+        [
+          20342,
+          0.7685
+        ],
+        [
+          20488,
+          0.7653
+        ],
+        [
+          20492,
+          0.7475
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01474",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "evidence_coverage": 0.8947368421052632
+      },
+      "retrieved": [
+        [
+          20309,
+          0.7212
+        ],
+        [
+          20311,
+          0.7099
+        ],
+        [
+          19027,
+          0.6677
+        ],
+        [
+          19726,
+          0.6639
+        ],
+        [
+          19026,
+          0.6629
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_01476",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.5,
+        "ndcg": 0.6309297535714575,
+        "evidence_coverage": 0.8947368421052632
+      },
+      "retrieved": [
+        [
+          20311,
+          0.7596
+        ],
+        [
+          20309,
+          0.7575
+        ],
+        [
+          19027,
+          0.6944
+        ],
+        [
+          19726,
+          0.6896
+        ],
+        [
+          20315,
+          0.6867
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00302",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          20976,
+          0.6133
+        ],
+        [
+          20682,
+          0.606
+        ],
+        [
+          20716,
+          0.5984
+        ],
+        [
+          20791,
+          0.596
+        ],
+        [
+          21127,
+          0.5951
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00702",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.11510791366906475
+      },
+      "retrieved": [
+        [
+          20881,
+          0.6644
+        ],
+        [
+          20831,
+          0.653
+        ],
+        [
+          21056,
+          0.6427
+        ],
+        [
+          10632,
+          0.6365
+        ],
+        [
+          20807,
+          0.6361
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_02416",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.3333333333333333,
+        "ndcg": 0.3065735963827292,
+        "evidence_coverage": 0.4827668795620438
+      },
+      "retrieved": [
+        [
+          161,
+          0.6461
+        ],
+        [
+          20909,
+          0.6403
+        ],
+        [
+          20859,
+          0.6381
+        ],
+        [
+          21027,
+          0.6351
+        ],
+        [
+          21058,
+          0.6337
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00283",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.6097560975609756
+      },
+      "retrieved": [
+        [
+          20862,
+          0.7155
+        ],
+        [
+          20876,
+          0.6637
+        ],
+        [
+          20759,
+          0.6598
+        ],
+        [
+          20836,
+          0.6366
+        ],
+        [
+          20917,
+          0.6334
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00724",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.028169014084507043
+      },
+      "retrieved": [
+        [
+          20779,
+          0.6356
+        ],
+        [
+          21146,
+          0.6299
+        ],
+        [
+          20781,
+          0.619
+        ],
+        [
+          20964,
+          0.6184
+        ],
+        [
+          21150,
+          0.61
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_02419",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          20964,
+          0.6564
+        ],
+        [
+          21121,
+          0.6417
+        ],
+        [
+          21066,
+          0.6373
+        ],
+        [
+          21056,
+          0.634
+        ],
+        [
+          20967,
+          0.6318
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00746",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Information extraction",
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.2,
+        "ndcg": 0.38685280723454163,
+        "evidence_coverage": 0.9064748201438849
+      },
+      "retrieved": [
+        [
+          21363,
+          0.6557
+        ],
+        [
+          21394,
+          0.6379
+        ],
+        [
+          21217,
+          0.635
+        ],
+        [
+          21392,
+          0.6341
+        ],
+        [
+          21220,
+          0.6277
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00521",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Information extraction",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.2716049382716049
+      },
+      "retrieved": [
+        [
+          21205,
+          0.6617
+        ],
+        [
+          21217,
+          0.6519
+        ],
+        [
+          21325,
+          0.6515
+        ],
+        [
+          21226,
+          0.6504
+        ],
+        [
+          21239,
+          0.6457
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00601",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 0.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.01020408163265306
+      },
+      "retrieved": [
+        [
+          6807,
+          0.7
+        ],
+        [
+          6934,
+          0.6953
+        ],
+        [
+          11958,
+          0.681
+        ],
+        [
+          995,
+          0.6795
+        ],
+        [
+          58,
+          0.6792
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00603",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.06153846153846154
+      },
+      "retrieved": [
+        [
+          21206,
+          0.6621
+        ],
+        [
+          21255,
+          0.6592
+        ],
+        [
+          21205,
+          0.6586
+        ],
+        [
+          21218,
+          0.6549
+        ],
+        [
+          21217,
+          0.6545
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00605",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.05555555555555555
+      },
+      "retrieved": [
+        [
+          21205,
+          0.7021
+        ],
+        [
+          21278,
+          0.6997
+        ],
+        [
+          21211,
+          0.6713
+        ],
+        [
+          21217,
+          0.6565
+        ],
+        [
+          21218,
+          0.6486
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00606",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          21205,
+          0.722
+        ],
+        [
+          21319,
+          0.6972
+        ],
+        [
+          21214,
+          0.685
+        ],
+        [
+          21325,
+          0.6818
+        ],
+        [
+          21217,
+          0.6806
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00859",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 1.0,
+        "strict_recall": 1.0,
+        "doc_accuracy": 1.0,
+        "mrr": 1.0,
+        "ndcg": 1.0,
+        "evidence_coverage": 1.0
+      },
+      "retrieved": [
+        [
+          21597,
+          0.7165
+        ],
+        [
+          18553,
+          0.6987
+        ],
+        [
+          12039,
+          0.6967
+        ],
+        [
+          21511,
+          0.6927
+        ],
+        [
+          19090,
+          0.6915
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_02024",
+      "question_type": "novel-generated",
+      "question_reasoning": null,
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.011363636363636364
+      },
+      "retrieved": [
+        [
+          21869,
+          0.7047
+        ],
+        [
+          21881,
+          0.687
+        ],
+        [
+          21581,
+          0.6752
+        ],
+        [
+          21486,
+          0.6747
+        ],
+        [
+          21473,
+          0.6728
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00216",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning) OR Logical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          21746,
+          0.6823
+        ],
+        [
+          21492,
+          0.6771
+        ],
+        [
+          21435,
+          0.6747
+        ],
+        [
+          21486,
+          0.674
+        ],
+        [
+          21754,
+          0.6687
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00215",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Logical reasoning (based on numerical reasoning)",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          21709,
+          0.6907
+        ],
+        [
+          21708,
+          0.6899
+        ],
+        [
+          21403,
+          0.6874
+        ],
+        [
+          21483,
+          0.6864
+        ],
+        [
+          21448,
+          0.6846
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_00566",
+      "question_type": "domain-relevant",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          21486,
+          0.7247
+        ],
+        [
+          21910,
+          0.7058
+        ],
+        [
+          21580,
+          0.7016
+        ],
+        [
+          21753,
+          0.6999
+        ],
+        [
+          21821,
+          0.6988
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_06247",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.04182697050409391
+      },
+      "retrieved": [
+        [
+          22681,
+          0.7109
+        ],
+        [
+          22076,
+          0.7109
+        ],
+        [
+          22122,
+          0.7046
+        ],
+        [
+          22146,
+          0.7045
+        ],
+        [
+          22121,
+          0.7016
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_04784",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.007042253521126761
+      },
+      "retrieved": [
+        [
+          22859,
+          0.7143
+        ],
+        [
+          22860,
+          0.7133
+        ],
+        [
+          22581,
+          0.701
+        ],
+        [
+          22582,
+          0.6996
+        ],
+        [
+          22580,
+          0.6961
+        ]
+      ]
+    },
+    {
+      "financebench_id": "financebench_id_06741",
+      "question_type": "metrics-generated",
+      "question_reasoning": "Numerical reasoning",
+      "metrics": {
+        "recall": 0.0,
+        "strict_recall": 0.0,
+        "doc_accuracy": 1.0,
+        "mrr": 0.0,
+        "ndcg": 0.0,
+        "evidence_coverage": 0.0
+      },
+      "retrieved": [
+        [
+          22653,
+          0.7306
+        ],
+        [
+          22271,
+          0.7268
+        ],
+        [
+          22844,
+          0.7189
+        ],
+        [
+          22661,
+          0.715
+        ],
+        [
+          21725,
+          0.7099
+        ]
+      ]
+    }
+  ]
+}

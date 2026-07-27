@@ -1,0 +1,655 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+  11pt,
+]{article}
+\usepackage{xcolor}
+\usepackage[margin=2.8cm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+% fallback for those not using the hyperref driver hyperxmp:
+\makeatletter
+\@ifundefined{xmpquote}{\newcommand{\xmpquote}[1]{#1}}{}
+\makeatother
+\hypersetup{
+  pdftitle={Building and Evaluating a Retrieval-Augmented Generation System on FinanceBench},
+  pdfauthor={Marwane Mhenni; Hamza El hamdi; Ali Cherri},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Building and Evaluating a Retrieval-Augmented Generation System
+on FinanceBench}
+\author{Marwane Mhenni \and Hamza El hamdi \and Ali Cherri}
+\date{NLP Graded Project A}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}\label{introduction}
+
+Retrieval-Augmented Generation (RAG) grounds a language model's answers
+in a closed document collection: passages relevant to the question are
+retrieved from an indexed corpus and the model is instructed to answer
+from them alone. This report presents the design, implementation, and
+experimental evaluation of a complete RAG pipeline for financial
+question answering over SEC filings, evaluated on the FinanceBench
+benchmark.
+
+Our goal is not a single headline score but a controlled study of which
+design decisions matter. We sweep 41 retrieval configurations across six
+axes (chunk size, chunk overlap, document structure preservation,
+embedding model, number of retrieved passages, and retrieval strategy,
+including a metadata prefilter derived from the question text), evaluate
+five free, locally executable generation models, and run oracle-context
+and closed-book ablations that attribute end-to-end errors to retrieval
+or to generation.
+
+Three findings stand out. First, restricting the search space with
+metadata parsed from the question (company and fiscal period) is the
+single largest retrieval improvement we measured, worth 13 to 16 points
+of recall at every k, more than any chunking or embedding change.
+Second, two standard-recipe components, BM25 (alone or in hybrid fusion)
+and a general-purpose cross-encoder reranker, actively hurt on this
+corpus of dense financial tables. Third, the ablations show the system
+is at least as generation-limited as retrieval-limited: even when handed
+the gold evidence, the best local 14B model fully answers only 59
+percent of the questions, and 40.7 percent of questions fail under
+oracle conditions, mostly on multi-step financial arithmetic.
+
+\section{Corpus Description}\label{corpus-description}
+
+FinanceBench (Islam et al., 2023) is an industry benchmark for question
+answering over public financial filings. Its open source split contains
+150 questions over 84 documents: 10-K and 10-Q filings, 8-K reports, and
+earnings releases from 40 public companies, fiscal years 2015 to 2023.
+Every question carries a gold answer and one to three evidence items,
+each annotated with the exact supporting text and its zero-based page
+number. Questions come in three types of 50 each: metrics-generated
+(read a value off a statement), domain-relevant (analyst questions
+requiring judgement), and novel-generated (unusual questions unlikely to
+be memorised), spanning information extraction, numerical reasoning, and
+logical reasoning.
+
+The benchmark ships a document catalog with source URLs rather than the
+documents themselves, and about a quarter of those URLs have rotted
+since publication. Our downloader retries with SEC-compliant request
+headers and falls back to the official FinanceBench GitHub mirror; 61
+documents arrived from their original URLs and 23 from the mirror, for
+full coverage of all 84 documents and therefore all 150 questions. A
+committed manifest records the provenance, size, and SHA-256 of every
+file.
+
+Text is extracted per page with PyMuPDF: 12,013 pages and 40.0M
+characters across the 84 documents. Cleaning is deliberately
+conservative (unicode NFKC normalisation, control-character removal,
+whitespace bounding) because aggressive normalisation destroys the row
+and column adjacency that financial tables depend on. Only 78 pages
+(0.65 percent) yielded fewer than 20 characters, indicating scanned or
+graphical pages; no document required OCR. Pages are the atomic unit of
+ground truth throughout: retrieval is scored against the annotated
+evidence pages, and a text-level containment measure catches evidence
+lost inside a retrieved page.
+
+\section{Methodology}\label{methodology}
+
+\subsection{Segmentation}\label{segmentation}
+
+Three chunkers cover the structure-preservation axis. The token chunker
+slides fixed windows over the whole document, ignoring layout. The page
+chunker treats the PDF page as the atomic unit and splits only oversized
+pages. The structural chunker packs whole paragraphs greedily up to the
+token budget, never cutting through one. All chunk boundaries are
+measured with one fixed reference tokenizer (bert-base-uncased)
+regardless of the embedding model, so that when we compare embedding
+models they see literally identical chunks. Every chunk carries its
+document name and the page span it covers.
+
+\subsection{Retrieval}\label{retrieval}
+
+Chunks are embedded with sentence-transformer models, using the query
+and passage prefixes each model's authors document (E5 and BGE are
+asymmetric; omitting their prefixes measurably degrades recall and would
+contaminate the comparison). Normalised embeddings are indexed in FAISS
+and searched by inner product. Three alternative strategies are
+implemented behind the same interface: Okapi BM25; a hybrid that min-max
+normalises dense and BM25 scores and combines them with weight alpha;
+and cross-encoder reranking (ms-marco-MiniLM-L-6-v2) applied to a dense
+candidate pool of configurable size.
+
+The metadata filter restricts candidates to documents whose company is
+named in the question, narrowed further by fiscal year when one is
+mentioned. It is built by matching the catalog's 40 company names (plus
+a small alias list) against the question string after both are
+lowercased and stripped of punctuation; 127 of the 150 questions name
+their company verbatim and the filter deactivates itself on the rest. It
+reads nothing from the gold record except the question text, so it uses
+only information a deployed system would have.
+
+\subsection{Generation}\label{generation}
+
+Answers are produced by free, locally executable instruction models
+served by Ollama, prompted to answer strictly from the numbered
+passages, to cite every fact as {[}n{]}, to state numeric answers with
+units, and to abstain with a fixed phrase when the passages are
+insufficient. The context window (16,384 tokens) sits well above the
+largest measured prompt, and every response's token accounting is
+checked against the window so silent truncation cannot pass unnoticed;
+zero truncations were flagged across all runs. Three context modes
+support the ablations: retrieved (the RAG system proper), oracle (the
+gold evidence passed directly, removing retrieval from the equation),
+and none (closed book, bounding how much of the score could be
+pre-training memorisation).
+
+\subsection{Evaluation}\label{evaluation}
+
+Retrieval is scored at page level against the annotated evidence:
+
+\begin{itemize}
+\tightlist
+\item
+  recall@k: some retrieved chunk covers a gold evidence page;
+\item
+  strict recall@k: a single chunk contains at least half of an evidence
+  item's 5-grams, i.e.~the evidence text itself was retrieved, not
+  merely its page;
+\item
+  document accuracy@k, MRR@k, and nDCG@k with page-level relevance;
+\item
+  evidence coverage@k: the mean fraction of evidence 5-grams present
+  anywhere in the retrieved set, the measure that exposes chunk-boundary
+  evidence loss.
+\end{itemize}
+
+Generation is scored deterministically with scale-tolerant numeric
+accuracy (FinanceBench answers are mostly dollar amounts, percentages,
+and ratios; the scale-tolerant variant forgives unit mismatches such as
+millions versus raw dollars but not wrong digits), SQuAD-style token F1,
+citation rate and citation validity (whether a cited passage actually
+covers a gold page), and abstention rate. An LLM judge (qwen2.5-14B,
+temperature 0, JSON-constrained output) grades correctness (0 to 2)
+against the reference answer and groundedness (0 to 2) against the
+passages shown to the model. Throughout the results, accuracy means the
+fraction of answers the judge scores fully correct.
+
+Because an LLM judge is an assertion until measured, we quantify its
+consistency against the deterministic numeric metric: over the 1,008
+judged answers to numeric questions, the judge's fully-correct verdict
+and the scale-tolerant numeric match agree on 81.6 percent of cases with
+Cohen's kappa 0.607, substantial agreement given that the two measures
+also disagree legitimately (an answer can state the right number for the
+wrong reason, or a correct non-numeric qualification). No human
+labelling was performed; we flag this in the limitations.
+
+\section{Experimental Setup}\label{experimental-setup}
+
+All heavy computation ran on one RunPod A100-SXM4-80GB pod (CUDA 12,
+PyTorch 2.9, Python 3.12); development and the 64-test unit suite ran on
+a laptop. The retrieval grid comprises 41 configurations: a 4x4 chunk
+size (128, 256, 512, 1024 tokens) by overlap (0, 10, 25, 50 percent)
+sweep, three structure modes, six embedding models (all-MiniLM-L6-v2,
+gte-base, e5-base-v2, bge-base-en-v1.5, e5-large-v2, bge-large-en-v1.5),
+k in \{1, 3, 5, 10, 20\}, BM25 at two k values, hybrid at alpha in
+\{0.3, 0.5, 0.7\}, reranking with pools of 20, 50, and 100, and the
+metadata filter at three k values plus one filter-plus-rerank
+combination. Sweeps are one-factor-at-a-time around a fixed baseline
+(token chunks of 512 with 64 overlap, bge-base, dense, k=5) so each
+comparison isolates one decision. The grid completed in about 100
+minutes on the A100; every run is cached under a hash of its
+configuration and is resumable.
+
+Generation consumed the top passages of the best eligible retrieval run
+(the metadata-filtered dense run; its top 10 passages reach 0.627
+recall, its top 20 reach 0.707) across five models spanning the four
+families named in the brief and two sizes of one family: llama3.1-8B,
+mistral-7B, qwen2.5-7B, phi4-14B, and qwen2.5-14B, all Q4 quantised.
+Ablations add oracle and closed-book runs for both qwen sizes and a k=20
+variant for qwen2.5-14B. Generation is deterministic (temperature 0),
+checkpoints every ten questions, and the ten generation and judging runs
+together used roughly three hours of A100 time, run three streams in
+parallel against one Ollama server.
+
+\section{Results}\label{results}
+
+\subsection{Retrieval}\label{retrieval-1}
+
+\begin{longtable}[]{@{}llllll@{}}
+\caption{headline retrieval results (the full 41-row table is in
+results/tables/retrieval\_results.md).}\tabularnewline
+\toprule\noalign{}
+Configuration & k & Recall@k & Strict@k & MRR@k & ms/query \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+Configuration & k & Recall@k & Strict@k & MRR@k & ms/query \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+dense + filter & 20 & 0.707 & 0.507 & 0.307 & 57 \\
+dense + filter & 10 & 0.627 & 0.407 & 0.301 & 37 \\
+dense, plain & 20 & 0.587 & 0.427 & 0.204 & 13 \\
+dense, plain & 10 & 0.500 & 0.333 & 0.198 & 8 \\
+dense + filter & 5 & 0.493 & 0.300 & 0.284 & 25 \\
+e5-large-v2 (best embedding) & 5 & 0.453 & 0.327 & 0.316 & 7 \\
+rerank, pool 20 & 10 & 0.447 & 0.340 & 0.203 & 178 \\
+baseline (bge-base) & 5 & 0.333 & 0.240 & 0.177 & 6 \\
+hybrid, best alpha 0.7 & 10 & 0.320 & 0.233 & 0.152 & 341 \\
+BM25 & 10 & 0.153 & 0.127 & 0.096 & 229 \\
+\end{longtable}
+
+\textbf{Metadata filtering dominates every other intervention.} At each
+k the filter adds 13 to 16 recall points over plain dense search and
+raises MRR by half. The mechanism is visible in the error taxonomy:
+wrong-document retrievals drop to 2 percent of questions. Filtering
+costs a few milliseconds and no training; on a corpus whose documents
+are near-duplicates of each other in vocabulary (every 10-K contains an
+income statement), identity metadata carries information that embeddings
+recover only partially.
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio,alt={Recall@5 by chunk size and overlap.}]{fig_chunking.png}}
+\caption{Recall@5 by chunk size and overlap.}
+\end{figure}
+
+\textbf{Chunking.} The 16-point chunk sweep spans 0.293 to 0.373 recall
+at k=5, a smaller range than the filter's effect at any k. A 10 percent
+overlap is best at every size; 256 and 512-token chunks lead on recall.
+Evidence coverage tells the other half of the story: it doubles from
+128-token chunks (0.11 to 0.15) to 1024-token chunks (0.26), because
+small windows retrieve the right page but hand the generator a fragment
+of the evidence. This tension (small chunks rank better, large chunks
+carry more of the evidence once found) motivates the 512/64 compromise
+used downstream.
+
+\textbf{Structure preservation.} Page-bounded chunks beat token windows
+(0.367 versus 0.333) with structural packing between (0.347). The gold
+labels are page-level, and financial statements are laid out one per
+page, so respecting the page boundary aligns chunks with both the
+annotation unit and the document's own semantics.
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio,alt={Embedding models compared on identical chunks.}]{fig_embeddings.png}}
+\caption{Embedding models compared on identical chunks.}
+\end{figure}
+
+\textbf{Embedding models.} e5-large-v2 is the strongest (0.453 recall
+and 0.316 MRR, the best MRR of any configuration including filtered
+ones), followed by bge-large (0.413), e5-base (0.387), bge-base (0.333),
+gte-base (0.313), and MiniLM (0.253). The E5 family wins at equal
+parameter count and scale helps within each family; yet swapping
+bge-base for e5-large is still worth less than adding the metadata
+filter on top of bge-base.
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio,alt={Effect of k on the four retrieval metrics.}]{fig_k.png}}
+\caption{Effect of k on the four retrieval metrics.}
+\end{figure}
+
+\textbf{k.} Recall grows monotonically from 0.093 at k=1 to 0.587 at
+k=20 with no plateau, so the retriever keeps finding gold pages deeper
+in the ranking; the cost is prompt length and distraction for the
+generator, quantified by the k=20 generation ablation below.
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio,alt={Retrieval strategies at matched k=10.}]{fig_strategy.png}}
+\caption{Retrieval strategies at matched k=10.}
+\end{figure}
+
+\textbf{Negative results: BM25, hybrid, and reranking.} BM25 reaches
+only 0.153 at k=10, one third of dense retrieval, and it drags every
+hybrid mixture below pure dense (best hybrid 0.320 at alpha 0.7).
+Filings are boilerplate: the terms in a question (``capital
+expenditure'', ``fiscal 2018'') appear on dozens of pages of every
+document, so term frequency barely discriminates, while paraphrase (the
+statement line reads ``purchases of property, plant and equipment'')
+defeats exact matching outright. The ms-marco cross-encoder also
+underperforms the dense ranking it reranks (0.380 to 0.447 versus 0.500
+at k=10), and enlarging its pool makes it worse, the opposite of the
+usual pattern: trained on web passages, it mis-scores dense financial
+tables, and a larger pool only gives it more distractors to promote.
+Both components would be net-negative additions to this system despite
+their standard-recipe status.
+
+\subsection{Generation}\label{generation-1}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 18\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 18\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 18\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 18\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 18\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 18\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 18\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 18\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 18\tabcolsep) * \real{0.1000}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 18\tabcolsep) * \real{0.1000}}@{}}
+\caption{generation results. Accuracy is the judge's fully-correct rate;
+Numeric is scale-tolerant numeric accuracy; Halluc. is the judge's
+hallucination rate.}\tabularnewline
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Run
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Context
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+k
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Accuracy
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Numeric
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Abstain
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Cited
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Cite valid
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Halluc.
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+s/q
+\end{minipage} \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Run
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Context
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+k
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Accuracy
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Numeric
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Abstain
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Cited
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Cite valid
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Halluc.
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+s/q
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+qwen2.5-14B oracle & oracle & 5 & 0.593 & 0.627 & 0.13 & 0.94 & 0.94 &
+0.20 & 3.2 \\
+qwen2.5-7B oracle & oracle & 5 & 0.427 & 0.437 & 0.34 & 0.63 & 0.63 &
+0.32 & 2.7 \\
+qwen2.5-14B & retrieved & 20 & 0.387 & 0.421 & 0.19 & 0.60 & 0.27 & 0.28
+& 17.6 \\
+phi4-14B & retrieved & 10 & 0.367 & 0.381 & 0.49 & 0.66 & 0.31 & 0.28 &
+5.2 \\
+qwen2.5-14B & retrieved & 10 & 0.367 & 0.381 & 0.36 & 0.65 & 0.34 & 0.27
+& 12.3 \\
+mistral-7B & retrieved & 10 & 0.253 & 0.222 & 0.51 & 0.47 & 0.17 & 0.33
+& 2.8 \\
+qwen2.5-7B & retrieved & 10 & 0.247 & 0.262 & 0.55 & 0.43 & 0.21 & 0.31
+& 2.3 \\
+llama3.1-8B & retrieved & 10 & 0.200 & 0.278 & 0.46 & 0.66 & 0.33 & 0.45
+& 3.4 \\
+qwen2.5-14B closed book & none & 0 & n/a & 0.111 & 0.00 & 0.00 & 0.00 &
+n/a & 12.5 \\
+qwen2.5-7B closed book & none & 0 & n/a & 0.087 & 0.00 & 0.00 & 0.00 &
+n/a & 2.0 \\
+\end{longtable}
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio,alt={Generation models under retrieved context.}]{fig_gen_models.png}}
+\caption{Generation models under retrieved context.}
+\end{figure}
+
+\textbf{Model comparison.} The two 14B models tie at 0.367 under
+identical retrieved context, well ahead of the 7B and 8B class (0.200 to
+0.253). Within the qwen family, doubling parameters is worth 12 points
+(0.247 to 0.367). llama3.1-8B pairs the lowest accuracy with the highest
+hallucination rate (0.45) despite citing frequently, the worst
+combination for a system meant to be trusted. Notably, phi4-14B matches
+qwen2.5-14B while abstaining far more often (0.49 versus 0.36): it
+trades coverage for precision.
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio,alt={Accuracy under closed book, retrieved, and oracle context.}]{fig_context_modes.png}}
+\caption{Accuracy under closed book, retrieved, and oracle context.}
+\end{figure}
+
+\textbf{Context ablations.} The closed-book runs collapse to 0.09 to
+0.11 numeric accuracy with zero citations, so essentially nothing the
+RAG system gets right comes from pre-training memory. The oracle runs
+bound what better retrieval could buy: with gold evidence in the prompt,
+qwen2.5-14B reaches 0.593 (and cites validly on 94 percent of answers).
+Raising k from 10 to 20 lifts context recall from 0.627 to 0.707 but
+end-to-end accuracy only from 0.367 to 0.387: the generator recovers
+just a fifth of the extra evidence it is given, at a 43 percent latency
+premium.
+
+\textbf{Citation behaviour.} Under oracle context, citation validity
+equals citation rate (0.94 for the 14B): when the right evidence is
+present, the model cites it. Under retrieved context, validity drops to
+roughly half the citation rate (0.27 to 0.34 valid against 0.60 to 0.66
+cited): models keep citing fluently even when the cited passage does not
+contain the evidence, which is exactly the failure mode citation
+validity was designed to expose.
+
+\section{Error Analysis}\label{error-analysis}
+
+\subsection{Retrieval failures}\label{retrieval-failures}
+
+At the filtered k=10 operating point, 56 of 150 questions (37.3 percent)
+miss the gold page:
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Failure mode & Count & Share \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Wrong document retrieved & 3 & 2.0\% \\
+Right document, wrong page & 53 & 35.3\% \\
+Gold page hit but evidence text mostly absent & 19 & 12.7\% \\
+\end{longtable}
+}
+
+Document discrimination is essentially solved by the filter; what
+remains is ranking inside a single filing, where the query must
+distinguish the income statement from ten pages that mention the same
+terms. The third row is invisible to page-level metrics: the right page
+was retrieved but the chunk boundary cut the evidence away (median
+coverage 0.03 among those 19). Failure rates differ sharply by question
+type: 16 percent for metrics-generated questions, whose phrasing mirrors
+statement line items, versus 56 percent for domain-relevant and 40
+percent for novel-generated questions, whose analyst phrasing shares
+little vocabulary with the evidence.
+
+\subsection{Attributing end-to-end
+errors}\label{attributing-end-to-end-errors}
+
+Comparing qwen2.5-14B under retrieved (k=10) and oracle context on the
+same 150 questions:
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 6\tabcolsep) * \real{0.2500}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Outcome
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Count
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Share
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Meaning
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Solved & 43 & 28.7\% & correct with retrieved and with gold evidence \\
+Retrieval-limited & 46 & 30.7\% & correct with gold evidence, wrong with
+retrieved \\
+Generation-limited & 61 & 40.7\% & wrong even with gold evidence \\
+Retrieval-rescued & 12 & 8.0\% & wrong with gold evidence, right with
+retrieved \\
+\end{longtable}
+}
+
+The retrieval-limited share (30.7 percent) is the headroom a perfect
+retriever could recover; the generation-limited share (40.7 percent) is
+the model's own ceiling and is the larger of the two. The small
+retrieval-rescued share is consistent with the near-floor closed-book
+accuracy: little arrives from memory.
+
+\begin{figure}
+\centering
+\pandocbounded{\includegraphics[keepaspectratio,alt={Fully-correct rate by reasoning type for the best RAG run.}]{fig_by_reasoning.png}}
+\caption{Fully-correct rate by reasoning type for the best RAG run.}
+\end{figure}
+
+Generation-limited failures concentrate in multi-step arithmetic: of the
+61, 25 are labelled numerical or numerically-grounded logical reasoning,
+14 information extraction, and 22 unlabelled (mostly novel-generated
+questions that also require computation). Two representative
+oracle-context failures: asked for AES Corporation's FY2022 inventory
+turnover, the model set up the correct formula, then mis-computed the
+average inventory and produced a wrong ratio; asked for Amazon's FY2017
+days payable outstanding, it applied the given formula and landed on
+94.78 days against a gold 93.86, an arithmetic slip inside an otherwise
+correct derivation. These are not retrieval or comprehension errors;
+they are calculator errors, and no retrieval improvement can fix them.
+
+\section{Discussion}\label{discussion}
+
+\textbf{What mattered.} One cheap, training-free intervention (metadata
+filtering) outweighed every embedding and chunking change we measured,
+which inverts the usual tuning priority for corpora of homogeneous,
+near-duplicate documents. Embedding choice came second (e5-large-v2),
+chunk geometry third and mostly as a coverage-versus-ranking trade-off.
+The standard additions, BM25 hybrid and cross-encoder reranking, were
+net negative here, a reminder that recipe components carry domain
+assumptions: term-frequency discrimination and web-passage relevance
+both fail on boilerplate filings.
+
+\textbf{Where the system is bound.} With the best retrieval we built
+(0.707 context recall at k=20), end-to-end accuracy is 0.387 while the
+oracle bound is 0.593. Closing the entire retrieval gap would therefore
+still leave more than 40 percent of questions failing on generation,
+dominated by financial arithmetic. The most promising next steps split
+accordingly: on the retrieval side, table-aware chunking and rerankers
+trained on financial text to attack the within-document ranking problem;
+on the generation side, tool-augmented arithmetic (a calculator the
+model must route computations through) or larger unquantised models.
+
+\textbf{Limitations.} Ground truth is page-level, so a chunk from the
+right page counts as relevant even if tables on that page mislead the
+model, and our strict-recall and coverage metrics only approximate
+span-level relevance. The judge is qwen2.5-14B, which also appears as a
+system under test; a judge may prefer its own outputs, and although its
+verdicts agree substantially with the deterministic numeric metric
+(kappa 0.607 over 1,008 answers) and the model ranking is unchanged
+under the purely deterministic metrics, no human labels were collected.
+All models are Q4 quantised, which may understate their unquantised
+accuracy, particularly on arithmetic. Runs are deterministic
+(temperature 0) single passes, so we report no variance. The metadata
+filter depends on the company being named in the question (127 of 150
+here); conversational queries with pronouns would need coreference
+handling before this gain transfers. Finally, 23 of 84 documents came
+from the benchmark's mirror rather than the original URLs; the manifest
+records this, but a fully link-rot-proof reproduction depends on that
+mirror persisting.
+
+\section{Conclusion}\label{conclusion}
+
+We built and evaluated a complete, fully local RAG pipeline for
+FinanceBench: 84 documents and 12,013 pages ingested with full question
+coverage, 41 retrieval configurations, five generation models, and
+ablations that separate retrieval from generation failures. The best
+system (metadata-filtered dense retrieval with bge-base embeddings
+feeding qwen2.5-14B at k=20) answers 38.7 percent of the 150 questions
+fully correctly by LLM-judge assessment, with a 0.707 context recall and
+near-zero reliance on pre-training memory. The experimental program
+yielded three transferable lessons: exploit document identity metadata
+before tuning anything else on homogeneous corpora; do not assume BM25
+hybrids or general-purpose rerankers transfer to financial text; and
+measure the oracle bound early, because past a point, and we are past
+it, the generator's arithmetic, not the retriever, is the binding
+constraint.
+
+\end{document}

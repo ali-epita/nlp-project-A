@@ -17,5 +17,4 @@ data/cache/
 # OS noise
 .DS_Store
 
-# Report build artifacts (the final PDF is committed explicitly)
-report/*.tex
+# Report build artifacts are committed (report.pdf, report.tex, report.docx)

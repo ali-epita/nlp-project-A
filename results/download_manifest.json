@@ -1,0 +1,598 @@
+{
+  "n_requested": 84,
+  "n_downloaded": 84,
+  "n_failed": 0,
+  "by_source": {
+    "cached": 3,
+    "doc_link": 59,
+    "github": 22,
+    "failed": 0
+  },
+  "documents": [
+    {
+      "doc_name": "3M_2018_10K",
+      "source": "doc_link",
+      "url": "https://investors.3m.com/financials/sec-filings/content/0001558370-19-000470/0001558370-19-000470.pdf",
+      "bytes": 1252586,
+      "sha256": "faf10c53fc6f1a8aa346ec3db79145e3ae6fbb3753c8064924e174d0a973934d"
+    },
+    {
+      "doc_name": "3M_2022_10K",
+      "source": "doc_link",
+      "url": "https://investors.3m.com/financials/sec-filings/content/0000066740-23-000014/0000066740-23-000014.pdf",
+      "bytes": 1655681,
+      "sha256": "d5cf549543a24b04228fd2af979ff2ca94cf64fb008a789340cb9117fbcfde5d"
+    },
+    {
+      "doc_name": "3M_2023Q2_10Q",
+      "source": "doc_link",
+      "url": "https://investors.3m.com/financials/sec-filings/content/0000066740-23-000058/0000066740-23-000058.pdf",
+      "bytes": 5287301,
+      "sha256": "3e66115793459f42185feeeab4e7f07dd27ab6dd465d0694ce415e861029cf93"
+    },
+    {
+      "doc_name": "ACTIVISIONBLIZZARD_2019_10K",
+      "source": "github",
+      "url": "https://raw.githubusercontent.com/patronus-ai/financebench/main/pdfs/ACTIVISIONBLIZZARD_2019_10K.pdf",
+      "bytes": 1274941,
+      "sha256": "017f1bbc1e37f2945a41fa2b5cf39d822e1e9d435a2c2b9c6b1cc76cd114a2df"
+    },
+    {
+      "doc_name": "ADOBE_2015_10K",
+      "source": "github",
+      "url": "https://raw.githubusercontent.com/patronus-ai/financebench/main/pdfs/ADOBE_2015_10K.pdf",
+      "bytes": 1457725,
+      "sha256": "f9ddba652f19e20752d98b1b4cedcebcb1a9a6d11dd23ab2e2f00f009a164c24"
+    },
+    {
+      "doc_name": "ADOBE_2016_10K",
+      "source": "cached",
+      "bytes": 4171413,
+      "sha256": "655153cdaed14d7093e98ff75595bf850a0d2299fa851ccf5b344ebc2d5038ae"
+    },
+    {
+      "doc_name": "ADOBE_2017_10K",
+      "source": "github",
+      "url": "https://raw.githubusercontent.com/patronus-ai/financebench/main/pdfs/ADOBE_2017_10K.pdf",
+      "bytes": 4028448,
+      "sha256": "ace32580369138998de84a0d0e24943766aa8374a17b823fdfae980b9c1458bd"
+    },
+    {
+      "doc_name": "ADOBE_2022_10K",
+      "source": "github",
+      "url": "https://raw.githubusercontent.com/patronus-ai/financebench/main/pdfs/ADOBE_2022_10K.pdf",
+      "bytes": 620288,
+      "sha256": "ce8c716abac26bfa38ae6b71d703112852c8591a4bb19f7c1177beb1dfc87ad2"
+    },
+    {
+      "doc_name": "AES_2022_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000874761/3be55db1-bf7e-407a-8062-6a6b8d9dd2f5.pdf",
+      "bytes": 4479324,
+      "sha256": "9c5de2227534c4d6bf3d805f635bad5d82eddf8e4183a85a3d1311b48b50291d"
+    },
+    {
+      "doc_name": "AMAZON_2017_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001018724/02da2a86-7bb9-4bcb-95ae-4ce27ea5e3bc.pdf",
+      "bytes": 627047,
+      "sha256": "f8af08ff6c4147351ec3a6e5e2c74e104678ce68fb0d6d476b1e43f685c09a3f"
+    },
+    {
+      "doc_name": "AMAZON_2019_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001018724/4d39f579-19d8-4119-b087-ee618abf82d6.pdf",
+      "bytes": 619184,
+      "sha256": "d7df8c6cf3e351a8d68c7473be4159723d545260a32dbc82a8dd11c254c5584a"
+    },
+    {
+      "doc_name": "AMCOR_2020_10K",
+      "source": "doc_link",
+      "url": "https://portalvhds1fxb0jchzgjph.blob.core.windows.net/press-releases-attachments/1517907/Annual%20report%20%5BSection%2013%20and%2015(d)%2C%20not%20S-K%20Item%20405%5D.pdf",
+      "bytes": 8364895,
+      "sha256": "da158d5c68835374bcc52205663aa7653af1c2a6b31b09ab775c6e02a40da026"
+    },
+    {
+      "doc_name": "AMCOR_2022_8K_dated-2022-07-01",
+      "source": "doc_link",
+      "url": "https://portalvhds1fxb0jchzgjph.blob.core.windows.net/press-releases-attachments/1517333/Current%20report.pdf",
+      "bytes": 147921,
+      "sha256": "1de32e72c265486469f3b1c7cbfbe064a27055e60f7b43a81439986dda9025ad"
+    },
+    {
+      "doc_name": "AMCOR_2023Q2_10Q",
+      "source": "doc_link",
+      "url": "https://portalvhds1fxb0jchzgjph.blob.core.windows.net/press-releases-attachments/1516809/Quarterly%20report%20%5BSections%2013%20or%2015(d)%5D.pdf",
+      "bytes": 455017,
+      "sha256": "71c39c3f338fc81a99e128e8e871e265818657670a7d29a62c454c905f94524c"
+    },
+    {
+      "doc_name": "AMCOR_2023Q4_EARNINGS",
+      "source": "doc_link",
+      "url": "https://assets.ctfassets.net/f7tuyt85vtoa/lkZ2DcdUS4nrhXzLdqCIw/4de2a47a58532c829039cfa972c7ad78/Amcor_FY23_-_Press_Release_FINAL.pdf",
+      "bytes": 244702,
+      "sha256": "d155b7808e78167831648f476b7e3578e2d98645dee30862bbef4ff50fa24bf4"
+    },
+    {
+      "doc_name": "AMCOR_2023_10K",
+      "source": "doc_link",
+      "url": "https://portalvhds1fxb0jchzgjph.blob.core.windows.net/press-releases-attachments/1556025/Annual%20report%20%5BSection%2013%20and%2015(d)%2C%20not%20S-K%20Item%20405%5D.pdf",
+      "bytes": 1108309,
+      "sha256": "84d7a0291a12f4e68352750dccda3754c78eefdf06e0b5462046357a1ed53332"
+    },
+    {
+      "doc_name": "AMD_2015_10K",
+      "source": "github",
+      "url": "https://raw.githubusercontent.com/patronus-ai/financebench/main/pdfs/AMD_2015_10K.pdf",
+      "bytes": 2474122,
+      "sha256": "105fff1c4af84a3d974b0f3fa224122e782aedca60fa3609f2789c80549dd8f6"
+    },
+    {
+      "doc_name": "AMD_2022_10K",
+      "source": "doc_link",
+      "url": "https://ir.amd.com/sec-filings/content/0000002488-23-000047/0000002488-23-000047.pdf",
+      "bytes": 5122473,
+      "sha256": "a3bd74088fae0ad4aa03d04998a1f4c64fd0b3c693841601b0ac49b46cf5c1f4"
+    },
+    {
+      "doc_name": "AMERICANEXPRESS_2022_10K",
+      "source": "doc_link",
+      "url": "https://s26.q4cdn.com/747928648/files/doc_financials/2022/q4/AMEX-10K-4Q22.pdf",
+      "bytes": 2436166,
+      "sha256": "d3bbc7ab23d6160e07eab50a359e4d68c40efff9fde3baa168e7c40e06f568e6"
+    },
+    {
+      "doc_name": "AMERICANWATERWORKS_2020_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001410636/088387fd-7250-4370-80a7-dc5a30ea84ed.pdf",
+      "bytes": 1437123,
+      "sha256": "6b43f1ed70b67c06483d28f8054270d597bce8507f298af2b1b6d9356d728602"
+    },
+    {
+      "doc_name": "AMERICANWATERWORKS_2021_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001410636/1228947b-ee48-4079-984b-7741727bbcea.pdf",
+      "bytes": 1975636,
+      "sha256": "701528ae6d14a77229468a829ee18f01ed439d5be012d0a915d2683335051029"
+    },
+    {
+      "doc_name": "AMERICANWATERWORKS_2022_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001410636/ba508f4d-f3f5-4b6a-beba-e7bef231f5db.pdf",
+      "bytes": 2729077,
+      "sha256": "aea336531f1f8b10ecee1dd61066aab29794504f1f4a1407c857bd1e20d7da40"
+    },
+    {
+      "doc_name": "BESTBUY_2017_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000764478/47c2227c-aa33-4fe8-b14c-5f77bc63857e.pdf",
+      "bytes": 776434,
+      "sha256": "4570187fa697f252e08c8f99c409446fbcde05b08358851d34d4cb1c8bd1cec8"
+    },
+    {
+      "doc_name": "BESTBUY_2019_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000764478/17bef9d1-6ef1-4a53-beb8-9c12b07a4a0e.pdf",
+      "bytes": 782117,
+      "sha256": "d3228e9acd2ce498b97a9d2cb99c2330b9a04687b7947908646d205b3eadf30d"
+    },
+    {
+      "doc_name": "BESTBUY_2023_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000764478/a7d1c855-4d22-48e4-9d17-b5f5af923dbe.pdf",
+      "bytes": 703034,
+      "sha256": "7ca465d31a08be29e8c08d756644d33d818c7254a1215720f265227005cda696"
+    },
+    {
+      "doc_name": "BESTBUY_2024Q2_10Q",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000764478/5e179976-086d-4c3c-af0c-85fda4b35b9d.pdf",
+      "bytes": 442386,
+      "sha256": "cf9efb922bdd28d726d7e1605c5fa1f263dda72e033989e3bc9ee3a3bb356c03"
+    },
+    {
+      "doc_name": "BLOCK_2016_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001512673/1862b88f-4e6b-4251-be45-4833fc0a0126.pdf",
+      "bytes": 864350,
+      "sha256": "5ef866a19b1110dcdbd1b0bc3c513a04e3d05322384c754cf394ad63f9af8191"
+    },
+    {
+      "doc_name": "BLOCK_2020_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001512673/c7b05bfa-5bb8-43b7-9580-9de362ef1e83.pdf",
+      "bytes": 1159158,
+      "sha256": "c19a9fb25db3270e3a908c202855f4a54f000a06bf19a8b284331810228646fe"
+    },
+    {
+      "doc_name": "BOEING_2018_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000012927/fdc164e4-475f-416e-ac75-acd03df4d646.pdf",
+      "bytes": 967741,
+      "sha256": "6f1ace34b3b01778ad7d92d43ccd2f76513d5159ef48fbc07b510296cf2d07dc"
+    },
+    {
+      "doc_name": "BOEING_2022_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000012927/c93682a4-8b3c-4251-a2ed-97c4e474a214.pdf",
+      "bytes": 1366995,
+      "sha256": "09285ff7ee737d3302977104aa05cc53c9dfb0161f3461a89b583dc38b9f2ab6"
+    },
+    {
+      "doc_name": "COCACOLA_2017_10K",
+      "source": "doc_link",
+      "url": "https://investors.coca-colacompany.com/filings-reports/annual-filings-10-k/content/0000021344-18-000008/0000021344-18-000008.pdf",
+      "bytes": 1790599,
+      "sha256": "b57c75cf20916904f31c6aa7644d6c110f019adf7c76782c7d0ede7b95c65ac1"
+    },
+    {
+      "doc_name": "COCACOLA_2021_10K",
+      "source": "doc_link",
+      "url": "https://investors.coca-colacompany.com/filings-reports/annual-filings-10-k/content/0000021344-22-000009/0000021344-22-000009.pdf",
+      "bytes": 9762541,
+      "sha256": "46a7059b9da795cd1ea9862d5b4f82a21e9b72e799351927a11f5cb4c528b592"
+    },
+    {
+      "doc_name": "COCACOLA_2022_10K",
+      "source": "doc_link",
+      "url": "https://investors.coca-colacompany.com/filings-reports/all-sec-filings/content/0000021344-23-000011/0000021344-23-000011.pdf",
+      "bytes": 9485811,
+      "sha256": "9a4fe8724125f67e82727ac2026ee540c8091bb39dfd29ecd4e69c5f80d4e343"
+    },
+    {
+      "doc_name": "CORNING_2020_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000024741/7cdeac7f-277e-4258-ad8e-4ba0f655f368.pdf",
+      "bytes": 1180865,
+      "sha256": "ef471ab9ff6067f117977df6df8b4b5007066286b733981475ac2ccf48d91e59"
+    },
+    {
+      "doc_name": "CORNING_2021_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000024741/f9519502-38b3-4e0b-94fa-b6a7138812a4.pdf",
+      "bytes": 1131912,
+      "sha256": "8023fac91ad417f996b692c506ee0e097effd091e698275288e4126cb8a2020e"
+    },
+    {
+      "doc_name": "CORNING_2022_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000024741/eb24002c-e050-45eb-806a-15264d59131c.pdf",
+      "bytes": 1399926,
+      "sha256": "a63f102f045826b38ad21a606c33710f62932646fd7c0f1852ce411a4397a3ee"
+    },
+    {
+      "doc_name": "COSTCO_2021_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000909832/534964a5-44c9-47b3-b3c0-7620830fad6c.pdf",
+      "bytes": 765319,
+      "sha256": "29e05b3862cf6ffa6cfda34ac82a9fa0fe76b67338c5924da3325c2ee3b08748"
+    },
+    {
+      "doc_name": "CVSHEALTH_2018_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000064803/317e65d9-41c0-4975-b3e1-30f7f2616049.pdf",
+      "bytes": 1868195,
+      "sha256": "bdc800e3f52a3e1d7a79c0973af3e94122fa08a76e335ea8305df60a09e1a0dc"
+    },
+    {
+      "doc_name": "CVSHEALTH_2022_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000064803/e4b97418-e95e-4391-b2d9-8c604c4950ac.pdf",
+      "bytes": 1898137,
+      "sha256": "183c196a41793cd50002ff6b88f8c6d32e4fcb1117ab490a732414e1208cda8f"
+    },
+    {
+      "doc_name": "FOOTLOCKER_2022_8K_dated-2022-05-20",
+      "source": "github",
+      "url": "https://raw.githubusercontent.com/patronus-ai/financebench/main/pdfs/FOOTLOCKER_2022_8K_dated-2022-05-20.pdf",
+      "bytes": 116133,
+      "sha256": "865f22331a5943a85e53e38d1753addbeb6c42270853cddd0abc73ab23d150e9"
+    },
+    {
+      "doc_name": "FOOTLOCKER_2022_8K_dated_2022-08-19",
+      "source": "github",
+      "url": "https://raw.githubusercontent.com/patronus-ai/financebench/main/pdfs/FOOTLOCKER_2022_8K_dated_2022-08-19.pdf",
+      "bytes": 316459,
+      "sha256": "70fd2d5bfc6955424196b372a5273ffbc74d2f0153f291e10e73edc37962a14e"
+    },
+    {
+      "doc_name": "GENERALMILLS_2019_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000040704/0fd13703-8eed-4b60-b46c-b2b3199887dc.pdf",
+      "bytes": 920782,
+      "sha256": "e8120ce31b22136e15c14115cdfbf3ddc548e58f15b6febc350c422a4c12d9db"
+    },
+    {
+      "doc_name": "GENERALMILLS_2020_10K",
+      "source": "doc_link",
+      "url": "https://s29.q4cdn.com/993087495/files/doc_downloads/2020/F20_10K_Final_07.01.2020.pdf",
+      "bytes": 2342475,
+      "sha256": "626dd53f9b52e5895b7a7073e1c491008769970609c10e2f6cf8247ed85d6fae"
+    },
+    {
+      "doc_name": "GENERALMILLS_2022_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000040704/e031af8c-f4fd-4350-9275-d3dbbec95c8c.pdf",
+      "bytes": 1083414,
+      "sha256": "27f2cc507ffc056de3b679d124d51b80bd043ce7b8e867c59e2cdfe1d2ea5de3"
+    },
+    {
+      "doc_name": "JOHNSON_JOHNSON_2022Q4_EARNINGS",
+      "source": "github",
+      "url": "https://raw.githubusercontent.com/patronus-ai/financebench/main/pdfs/JOHNSON_JOHNSON_2022Q4_EARNINGS.pdf",
+      "bytes": 729392,
+      "sha256": "7ae6bf6f9a998d19e23fd796b58b0f2015085c74712253b78fb90174c12436a7"
+    },
+    {
+      "doc_name": "JOHNSON_JOHNSON_2022_10K",
+      "source": "github",
+      "url": "https://raw.githubusercontent.com/patronus-ai/financebench/main/pdfs/JOHNSON_JOHNSON_2022_10K.pdf",
+      "bytes": 1941368,
+      "sha256": "dba7d6cc97734abd6dcbc1a6a34f82b5d228e60d0a1a32425a90404fd4d3e290"
+    },
+    {
+      "doc_name": "JOHNSON_JOHNSON_2023Q2_EARNINGS",
+      "source": "github",
+      "url": "https://raw.githubusercontent.com/patronus-ai/financebench/main/pdfs/JOHNSON_JOHNSON_2023Q2_EARNINGS.pdf",
+      "bytes": 1212840,
+      "sha256": "db1f3419d309440e644dc3cdfbb74758e67734dd181e5dbabc7479d0ab92d026"
+    },
+    {
+      "doc_name": "JOHNSON_JOHNSON_2023_8K_dated-2023-08-30",
+      "source": "github",
+      "url": "https://raw.githubusercontent.com/patronus-ai/financebench/main/pdfs/JOHNSON_JOHNSON_2023_8K_dated-2023-08-30.pdf",
+      "bytes": 455282,
+      "sha256": "0601a4b9f15e4400ced1b2ccb81c309cb66844fbac6b975a76dc490501bea95a"
+    },
+    {
+      "doc_name": "JPMORGAN_2021Q1_10Q",
+      "source": "doc_link",
+      "url": "https://www.jpmorganchase.com/content/dam/jpmc/jpmorgan-chase-and-co/investor-relations/documents/quarterly-earnings/2021/1st-quarter/1q21-10-q.pdf",
+      "bytes": 2285253,
+      "sha256": "62518c05b02265dc13ca257d9ec0be0aec4449dad53db0c77d93444e7e2cfe97"
+    },
+    {
+      "doc_name": "JPMORGAN_2022Q2_10Q",
+      "source": "doc_link",
+      "url": "https://www.jpmorganchase.com/content/dam/jpmc/jpmorgan-chase-and-co/investor-relations/documents/quarterly-earnings/2022/2nd-quarter/corp-q2-2022.pdf",
+      "bytes": 2290421,
+      "sha256": "7d715f552d4eeb6b2a1ea8ae02237b5767306907e761270ac23d74ac5b7e44b5"
+    },
+    {
+      "doc_name": "JPMORGAN_2022_10K",
+      "source": "doc_link",
+      "url": "https://www.jpmorganchase.com/content/dam/jpmc/jpmorgan-chase-and-co/investor-relations/documents/quarterly-earnings/2022/4th-quarter/corp-10k-2022.pdf",
+      "bytes": 6947859,
+      "sha256": "c269899950f36edfa496e3c8447a51d86d0a206442a96dc24dcd9317d55b957c"
+    },
+    {
+      "doc_name": "JPMORGAN_2023Q2_10Q",
+      "source": "doc_link",
+      "url": "https://www.jpmorganchase.com/content/dam/jpmc/jpmorgan-chase-and-co/investor-relations/documents/quarterly-earnings/2023/2nd-quarter/CORP-Q2-2023.pdf",
+      "bytes": 2573600,
+      "sha256": "eef2d9c1fdb5dc82be48166487a9e451c8544aec932a01fb06309ea7cd7122f5"
+    },
+    {
+      "doc_name": "KRAFTHEINZ_2019_10K",
+      "source": "github",
+      "url": "https://raw.githubusercontent.com/patronus-ai/financebench/main/pdfs/KRAFTHEINZ_2019_10K.pdf",
+      "bytes": 1531923,
+      "sha256": "df1340e7b002e5f412d4c9073292d0f48a2988fd347d5a4f44d017b9680fbae2"
+    },
+    {
+      "doc_name": "LOCKHEEDMARTIN_2020_10K",
+      "source": "github",
+      "url": "https://raw.githubusercontent.com/patronus-ai/financebench/main/pdfs/LOCKHEEDMARTIN_2020_10K.pdf",
+      "bytes": 1372193,
+      "sha256": "1e68051a649270779fc5cb68806612a28d7d81288ed75dd37aa1858717bf55a0"
+    },
+    {
+      "doc_name": "LOCKHEEDMARTIN_2021_10K",
+      "source": "github",
+      "url": "https://raw.githubusercontent.com/patronus-ai/financebench/main/pdfs/LOCKHEEDMARTIN_2021_10K.pdf",
+      "bytes": 1347017,
+      "sha256": "d2486265fedea887bcc621f0b2dbb9670e66fe05203e1378b8e650c9564732fb"
+    },
+    {
+      "doc_name": "LOCKHEEDMARTIN_2022_10K",
+      "source": "github",
+      "url": "https://raw.githubusercontent.com/patronus-ai/financebench/main/pdfs/LOCKHEEDMARTIN_2022_10K.pdf",
+      "bytes": 1398312,
+      "sha256": "9a2317300d0f1e2623ba291fe9ec38fc779c1d1ad989dcfe6f862b77435c6923"
+    },
+    {
+      "doc_name": "MGMRESORTS_2018_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000789570/d1b055df-9e21-4013-a311-67c98e2eb16a.pdf",
+      "bytes": 1421540,
+      "sha256": "1b540737f91716aaa23b062499e6cab9c51d258e151f37eb8c65646bb588a0da"
+    },
+    {
+      "doc_name": "MGMRESORTS_2020_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000789570/03692647-6ccc-4177-8ce9-13ac35692254.pdf",
+      "bytes": 1383002,
+      "sha256": "98a9a55baf838309d16a730fd63efbcd146be1911b61abb3658b1774f360b099"
+    },
+    {
+      "doc_name": "MGMRESORTS_2022Q4_EARNINGS",
+      "source": "doc_link",
+      "url": "https://s22.q4cdn.com/513010314/files/doc_financials/2022/q4/r/MGM-Resorts-Exhibit-99.1.pdf",
+      "bytes": 737922,
+      "sha256": "fe9126b17c3656e50d53741b13cb5fb233d4adaf922e4d84072b1d5e564fbfbd"
+    },
+    {
+      "doc_name": "MGMRESORTS_2022_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000789570/5e924681-e9c4-4bfb-95db-ef7c484303e7.pdf",
+      "bytes": 1755866,
+      "sha256": "130b96c1309c97aaedcabee2fa5d5421e54491e618273bd33c3b1aeddad323ec"
+    },
+    {
+      "doc_name": "MGMRESORTS_2023Q2_10Q",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000789570/e20e899f-c320-44ee-b5f9-c219e4585f49.pdf",
+      "bytes": 661891,
+      "sha256": "09c02fd40073570ae0826d707674154a9cd55a895e94096a82fcf0a4447ea64d"
+    },
+    {
+      "doc_name": "MICROSOFT_2016_10K",
+      "source": "github",
+      "url": "https://raw.githubusercontent.com/patronus-ai/financebench/main/pdfs/MICROSOFT_2016_10K.pdf",
+      "bytes": 838415,
+      "sha256": "f3555bd5ea1802770cc8f2a7ca766392e16fe6504f18688db681d852029404dc"
+    },
+    {
+      "doc_name": "MICROSOFT_2023_10K",
+      "source": "github",
+      "url": "https://raw.githubusercontent.com/patronus-ai/financebench/main/pdfs/MICROSOFT_2023_10K.pdf",
+      "bytes": 726155,
+      "sha256": "e534af371c824aab19b8d01f8bc0e9d1e0a3fb418a33119c5224a53d20a0d37b"
+    },
+    {
+      "doc_name": "NETFLIX_2015_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001065280/7c37ae9c-ace5-4ad5-ab02-6b5e82c5ff8f.pdf",
+      "bytes": 578489,
+      "sha256": "b22ca874ef08f383bd0b1071677d44f4a242af668f855f00dc9c6d4ac94148e2"
+    },
+    {
+      "doc_name": "NETFLIX_2017_10K",
+      "source": "cached",
+      "bytes": 651011,
+      "sha256": "981a69bba010dd1709c74ccec9ca26c61635c02a4f22b76345d26021e88077d6"
+    },
+    {
+      "doc_name": "NIKE_2018_10K",
+      "source": "cached",
+      "bytes": 962221,
+      "sha256": "31de66f1e37cabf1785e0ffa66955bf003bf2a9dcf3f4ebe93732d063b7b6ebe"
+    },
+    {
+      "doc_name": "NIKE_2019_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000320187/76b92d86-75b3-4fa9-a754-e83395d63a46.pdf",
+      "bytes": 909932,
+      "sha256": "7dbdf1bcbf37dd6d6e694ce95bcb23cd6943d08cc9cd1e5ee9832ed8f7eebdc6"
+    },
+    {
+      "doc_name": "NIKE_2021_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000320187/702c5a98-3399-4049-aa9b-a159dd44826c.pdf",
+      "bytes": 877882,
+      "sha256": "73b54e5e0b1b0b33e51ac314f6d9a9db0bcc286269feb24a3445a5f1ff0f7789"
+    },
+    {
+      "doc_name": "NIKE_2023_10K",
+      "source": "doc_link",
+      "url": "https://s1.q4cdn.com/806093406/files/doc_downloads/2023/414759-1-_5_Nike-NPS-Combo_Form-10-K_WR.pdf",
+      "bytes": 3463188,
+      "sha256": "51f5a0fc6ede20de4f5cfdeae8791a57bdd65c95db2ceb263eb120696ff90172"
+    },
+    {
+      "doc_name": "PAYPAL_2022_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0001633917/b562e712-8266-493c-8ae8-e28f93404d2f.pdf",
+      "bytes": 4371232,
+      "sha256": "0c1dd6cd170261c6bd778de382a211a56a3bb1e009a429246370c97fa0defab3"
+    },
+    {
+      "doc_name": "PEPSICO_2021_10K",
+      "source": "github",
+      "url": "https://raw.githubusercontent.com/patronus-ai/financebench/main/pdfs/PEPSICO_2021_10K.pdf",
+      "bytes": 2139398,
+      "sha256": "f2c7cf1969c7f6dfc8c0596824e1d6b3cc70f662ee2dd06be84bb27af5635364"
+    },
+    {
+      "doc_name": "PEPSICO_2022_10K",
+      "source": "github",
+      "url": "https://raw.githubusercontent.com/patronus-ai/financebench/main/pdfs/PEPSICO_2022_10K.pdf",
+      "bytes": 2993516,
+      "sha256": "7d8a9f3374e429c58f101319e2da8a0e601a89859e1e4f6854163dd5f8ce6b47"
+    },
+    {
+      "doc_name": "PEPSICO_2023Q1_EARNINGS",
+      "source": "github",
+      "url": "https://raw.githubusercontent.com/patronus-ai/financebench/main/pdfs/PEPSICO_2023Q1_EARNINGS.pdf",
+      "bytes": 987394,
+      "sha256": "a705483ea6c548a2f67c421bc24ced391a6beb8487600b44b54e9ae2aca1f31c"
+    },
+    {
+      "doc_name": "PEPSICO_2023_8K_dated-2023-05-05",
+      "source": "github",
+      "url": "https://raw.githubusercontent.com/patronus-ai/financebench/main/pdfs/PEPSICO_2023_8K_dated-2023-05-05.pdf",
+      "bytes": 102321,
+      "sha256": "e8591d6f83d810a0f9edfc540a1a21aa6269a6de4c756b5eb808d5dbbea330ed"
+    },
+    {
+      "doc_name": "PEPSICO_2023_8K_dated-2023-05-30",
+      "source": "github",
+      "url": "https://raw.githubusercontent.com/patronus-ai/financebench/main/pdfs/PEPSICO_2023_8K_dated-2023-05-30.pdf",
+      "bytes": 1460889,
+      "sha256": "8e8f99f270b065e105636f54b2684f4c4170b3fc80845ae2f393bf66f3291d2c"
+    },
+    {
+      "doc_name": "PFIZER_2021_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000078003/fa35a206-5bac-4a7a-9571-1e194b4436b5.pdf",
+      "bytes": 1171782,
+      "sha256": "ff3307d5f633c5dbe59a976f5ff5e086af04ba5a5135f2b6411c89538a22a665"
+    },
+    {
+      "doc_name": "Pfizer_2023Q2_10Q",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000078003/c7518e4a-3aaf-4987-ae85-27460d0f526c.pdf",
+      "bytes": 743533,
+      "sha256": "bf6c059a1dd71bd56581c94bce650bd85b56de2f4d0a25b45f05804a8bd6684d"
+    },
+    {
+      "doc_name": "ULTABEAUTY_2023Q4_EARNINGS",
+      "source": "doc_link",
+      "url": "https://d1io3yog0oux5.cloudfront.net/_237c8bef5f763d3c6c3a0d12f008caba/ulta/news/2023-03-09_Ulta_Beauty_Announces_Fourth_Quarter_Fiscal_2022_164.pdf",
+      "bytes": 104620,
+      "sha256": "8557522db49aaee56d78a96c2ffcda62a637b0595257c7bfcb757c6368ddcb6c"
+    },
+    {
+      "doc_name": "ULTABEAUTY_2023_10K",
+      "source": "doc_link",
+      "url": "https://www.ulta.com/investor/sec-filings/annual-reports/content/0001558370-23-004581/0001558370-23-004581.pdf",
+      "bytes": 4954215,
+      "sha256": "cdf2ebcfbc2eb9ecf880126d38b186cac1f683dae5bcb50cad15176bfc449ff4"
+    },
+    {
+      "doc_name": "VERIZON_2021_10K",
+      "source": "doc_link",
+      "url": "https://www.verizon.com/about/sites/default/files/2021-Annual-Report-on-Form-10-K.pdf",
+      "bytes": 2098068,
+      "sha256": "f7fcb508f920e3df9a07bc858a6d9f0d3cd1e976a46efe72375c9ffb983822ac"
+    },
+    {
+      "doc_name": "VERIZON_2022_10K",
+      "source": "doc_link",
+      "url": "https://www.verizon.com/about/sites/default/files/2022-Annual-Report-on-Form-10K.pdf",
+      "bytes": 2315268,
+      "sha256": "403d7346e8a059472863d1789527f16e5127a61c2f6c4429012e6227f27576d7"
+    },
+    {
+      "doc_name": "WALMART_2018_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000104169/a25e7acb-aa07-49f3-8c0c-0c69e5a8d372.pdf",
+      "bytes": 1599075,
+      "sha256": "661512df698c895a4a5ab3d4ab879fd8ffc8f17a9038e27bcb208401982b6c15"
+    },
+    {
+      "doc_name": "WALMART_2019_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000104169/b23b2787-eb44-4e0b-82bd-fca01f140a3e.pdf",
+      "bytes": 7211754,
+      "sha256": "f1d1b052c2b68c5d68e3575de7069dc47914f03abb02771d2629b10bf7d9e377"
+    },
+    {
+      "doc_name": "WALMART_2020_10K",
+      "source": "doc_link",
+      "url": "https://d18rn0p25nwr6d.cloudfront.net/CIK-0000104169/af5415d9-0e07-4ba1-a6cc-bb3058a7f4e8.pdf",
+      "bytes": 1132390,
+      "sha256": "0f9e2ebc9432caef54fe932ec91ccc6fea3eac89f370073462ae002eabb71a34"
+    }
+  ]
+}
