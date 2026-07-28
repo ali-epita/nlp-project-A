@@ -36,8 +36,9 @@ Team: Marwane Mhenni, Hamza El hamdi, Ali Cherri.
     scripts/             GPU pod setup
     data/                the two FinanceBench JSONL files (committed);
                          pdfs/, corpus/, cache/ are generated and gitignored
-    results/             run records, tables, and figures (committed)
-    report/              the scientific report (Markdown source and build)
+    results/             run records, tables, and figures, generated locally by
+                         the sweep and analysis scripts and not committed
+    report/              the scientific report (report_nlp.pdf)
 
 ## Installation
 
@@ -72,8 +73,8 @@ models pulled (see scripts/setup_pod.sh for the exact list).
     # 4. Judge validation (requires the Codex CLI for the secondary judge)
     uv run python experiments/judge_agreement.py --sample 60
 
-    # 5. Report
-    make report
+The built report is committed at report/report_nlp.pdf. Its source is not
+tracked, so the make report target does not run from a fresh clone.
 
 Every stage is cached and resumable: retrieval runs are keyed by a hash of
 their configuration, generation runs checkpoint every ten questions, and
